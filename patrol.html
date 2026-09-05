@@ -9,8 +9,9 @@
   <title>立新國中巡堂紀錄表</title>
   
   <style>
-    :root {
+    :root, [data-theme="blue"] {
       --md-sys-color-primary: #0b57d0;
+      --md-sys-color-primary-dark: #0842a0;
       --md-sys-color-on-primary: #ffffff;
       --md-sys-color-primary-container: #d3e3fd;
       --md-sys-color-on-primary-container: #041e49;
@@ -21,13 +22,109 @@
       --md-sys-color-outline: #747775;
       --md-sys-color-outline-variant: #c4c7c5;
       --md-sys-color-card: #ffffff;
-      --md-sys-color-green-container: #c4eed0;
-      --md-sys-color-on-green-container: #072711;
-      --md-sys-color-amber-container: #ffe088;
-      --md-sys-color-on-amber-container: #261900;
-      --md-elevation-1: 0px 1px 3px 1px rgba(0, 0, 0, 0.12), 0px 1px 2px 0px rgba(0, 0, 0, 0.18);
-      --md-elevation-2: 0px 2px 6px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px 0px rgba(0, 0, 0, 0.20);
-      --md-elevation-3: 0px 4px 8px 3px rgba(0, 0, 0, 0.12), 0px 1px 3px 0px rgba(0, 0, 0, 0.20);
+      --theme-meta-color: #0b57d0;
+      --header-accent-color: #0b57d0;
+      --progress-gradient: linear-gradient(90deg, #0b57d0, #38bdf8);
+    }
+
+    [data-theme="emerald"] {
+      --md-sys-color-primary: #0f766e;
+      --md-sys-color-primary-dark: #0b5650;
+      --md-sys-color-on-primary: #ffffff;
+      --md-sys-color-primary-container: #ccfbf1;
+      --md-sys-color-on-primary-container: #042f2e;
+      --md-sys-color-surface: #f0fdf4;
+      --md-sys-color-on-surface: #19241e;
+      --md-sys-color-surface-variant: #d1e7dd;
+      --md-sys-color-on-surface-variant: #3d5047;
+      --md-sys-color-outline: #6b8478;
+      --md-sys-color-outline-variant: #b8d5c8;
+      --md-sys-color-card: #ffffff;
+      --theme-meta-color: #0f766e;
+      --header-accent-color: #0f766e;
+      --progress-gradient: linear-gradient(90deg, #0f766e, #34d399);
+    }
+
+    [data-theme="amber"] {
+      --md-sys-color-primary: #d97706;
+      --md-sys-color-primary-dark: #b45309;
+      --md-sys-color-on-primary: #ffffff;
+      --md-sys-color-primary-container: #fef3c7;
+      --md-sys-color-on-primary-container: #451a03;
+      --md-sys-color-surface: #fffbeb;
+      --md-sys-color-on-surface: #261e14;
+      --md-sys-color-surface-variant: #ede4d3;
+      --md-sys-color-on-surface-variant: #594d3e;
+      --md-sys-color-outline: #8c7c68;
+      --md-sys-color-outline-variant: #ddd0be;
+      --md-sys-color-card: #ffffff;
+      --theme-meta-color: #d97706;
+      --header-accent-color: #d97706;
+      --progress-gradient: linear-gradient(90deg, #d97706, #fbbf24);
+    }
+
+    [data-theme="purple"] {
+      --md-sys-color-primary: #7c3aed;
+      --md-sys-color-primary-dark: #5b21b6;
+      --md-sys-color-on-primary: #ffffff;
+      --md-sys-color-primary-container: #ede9fe;
+      --md-sys-color-on-primary-container: #2e1065;
+      --md-sys-color-surface: #faf5ff;
+      --md-sys-color-on-surface: #22182e;
+      --md-sys-color-surface-variant: #e6ddf5;
+      --md-sys-color-on-surface-variant: #504461;
+      --md-sys-color-outline: #7f7094;
+      --md-sys-color-outline-variant: #d6caed;
+      --md-sys-color-card: #ffffff;
+      --theme-meta-color: #7c3aed;
+      --header-accent-color: #7c3aed;
+      --progress-gradient: linear-gradient(90deg, #7c3aed, #c084fc);
+    }
+
+    [data-theme="rose"] {
+      --md-sys-color-primary: #e11d48;
+      --md-sys-color-primary-dark: #9f1239;
+      --md-sys-color-on-primary: #ffffff;
+      --md-sys-color-primary-container: #ffe4e6;
+      --md-sys-color-on-primary-container: #4c0519;
+      --md-sys-color-surface: #fff1f2;
+      --md-sys-color-on-surface: #2b181c;
+      --md-sys-color-surface-variant: #f2d8dc;
+      --md-sys-color-on-surface-variant: #614247;
+      --md-sys-color-outline: #946f75;
+      --md-sys-color-outline-variant: #ecc4ca;
+      --md-sys-color-card: #ffffff;
+      --theme-meta-color: #e11d48;
+      --header-accent-color: #e11d48;
+      --progress-gradient: linear-gradient(90deg, #e11d48, #fb7185);
+    }
+
+    [data-theme="indigo"] {
+      --md-sys-color-primary: #4338ca;
+      --md-sys-color-primary-dark: #312e81;
+      --md-sys-color-on-primary: #ffffff;
+      --md-sys-color-primary-container: #e0e7ff;
+      --md-sys-color-on-primary-container: #1e1b4b;
+      --md-sys-color-surface: #f5f7ff;
+      --md-sys-color-on-surface: #1e1e24;
+      --md-sys-color-surface-variant: #dadaf5;
+      --md-sys-color-on-surface-variant: #49495c;
+      --md-sys-color-outline: #797994;
+      --md-sys-color-outline-variant: #c7c7e6;
+      --md-sys-color-card: #ffffff;
+      --theme-meta-color: #4338ca;
+      --header-accent-color: #4338ca;
+      --progress-gradient: linear-gradient(90deg, #4338ca, #818cf8);
+    }
+
+    :root {
+      --md-sys-color-green-container: #d1f4dc;
+      --md-sys-color-on-green-container: #083c16;
+      --md-sys-color-amber-container: #fef0c7;
+      --md-sys-color-on-amber-container: #7a3e00;
+      --md-elevation-1: 0px 1px 3px 1px rgba(0, 0, 0, 0.08), 0px 1px 2px 0px rgba(0, 0, 0, 0.12);
+      --md-elevation-2: 0px 2px 6px 2px rgba(0, 0, 0, 0.09), 0px 1px 2px 0px rgba(0, 0, 0, 0.14);
+      --md-elevation-3: 0px 4px 12px 3px rgba(0, 0, 0, 0.12), 0px 2px 4px 0px rgba(0, 0, 0, 0.16);
     }
 
     * {
@@ -44,14 +141,20 @@
       line-height: 1.5;
       padding-bottom: 96px; /* 為底部 FAB 與狀態列預留空間 */
       font-size: 16px;
+      transition: background-color 0.25s ease, color 0.25s ease;
     }
 
     /* 頂部 Android Material 3 AppBar */
     .top-app-bar {
       background-color: #ffffff;
       border-bottom: 1px solid var(--md-sys-color-surface-variant);
-      padding: 12px 16px;
+      border-top: 3.5px solid var(--header-accent-color);
+      padding: 10px 16px;
       box-shadow: var(--md-elevation-1);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      transition: border-color 0.25s ease;
     }
     .app-bar-inner {
       max-width: 900px;
@@ -59,34 +162,168 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 8px;
     }
-    .app-title-group h1 {
-      font-size: 1.25rem;
-      font-weight: 700;
+    .app-title-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+    .school-logo {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      flex-shrink: 0;
+      border-radius: 8px;
+      background-color: #ffffff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+      padding: 2px;
+      border: 1px solid var(--md-sys-color-outline-variant);
+    }
+    .title-text-wrap {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+    .title-text-wrap h1 {
+      font-size: 1.22rem;
+      font-weight: 800;
       color: var(--md-sys-color-primary);
-      letter-spacing: 0.2px;
+      letter-spacing: 0.3px;
+      line-height: 1.3;
+      white-space: nowrap;
+      transition: color 0.25s ease;
     }
-    .app-title-group p {
+    .title-text-wrap p {
       font-size: 0.8125rem;
       color: var(--md-sys-color-on-surface-variant);
+      font-weight: 500;
+      white-space: nowrap;
     }
     .app-actions {
       display: flex;
       align-items: center;
       gap: 8px;
+      flex-shrink: 0;
     }
-    .btn-icon {
-      background: var(--md-sys-color-surface);
-      border: 1px solid var(--md-sys-color-outline-variant);
+
+    /* 主題切換器樣式 */
+    .theme-dropdown-container {
+      position: relative;
+      display: inline-block;
+    }
+    .btn-theme-selector {
+      background-color: var(--md-sys-color-surface);
+      border: 1.5px solid var(--md-sys-color-outline-variant);
       border-radius: 20px;
       padding: 6px 12px;
       font-size: 0.8125rem;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--md-sys-color-primary);
-      text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      outline: none;
+      user-select: none;
+    }
+    .btn-theme-selector:hover {
+      background-color: var(--md-sys-color-primary-container);
+      border-color: var(--md-sys-color-primary);
+    }
+    .theme-current-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--md-sys-color-primary);
+      box-shadow: 0 0 0 2px #fff;
+    }
+    .theme-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: var(--md-elevation-3);
+      border: 1px solid var(--md-sys-color-outline-variant);
+      padding: 8px 6px;
+      min-width: 185px;
+      z-index: 100;
+      animation: themeFadeIn 0.15s ease-out;
+    }
+    .theme-dropdown-menu.show {
+      display: block;
+    }
+    @keyframes themeFadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .theme-dropdown-header {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--md-sys-color-on-surface-variant);
+      padding: 4px 10px 6px 10px;
+      border-bottom: 1px solid var(--md-sys-color-surface-variant);
+      margin-bottom: 4px;
+    }
+    .theme-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      padding: 8px 10px;
+      border: none;
+      background: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--md-sys-color-on-surface);
+      text-align: left;
+      transition: background 0.15s ease;
+    }
+    .theme-item:hover {
+      background-color: var(--md-sys-color-surface);
+    }
+    .theme-item.active {
+      background-color: var(--md-sys-color-primary-container);
+      color: var(--md-sys-color-on-primary-container);
+      font-weight: 700;
+    }
+    .theme-swatch {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.15);
+    }
+
+    /* 手機與平板版瀏覽：標題不固定在最上方，隨頁面滑動自然捲動，釋放螢幕最大可視空間 */
+    @media (max-width: 768px) {
+      .top-app-bar {
+        position: relative; /* 瀏覽滑動時不固定在最上方 */
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      }
+      .school-logo {
+        width: 38px;
+        height: 38px;
+      }
+      .title-text-wrap h1 {
+        font-size: 1.05rem;
+      }
+      .title-text-wrap p {
+        font-size: 0.72rem;
+      }
+      .btn-theme-selector .theme-btn-text {
+        display: none;
+      }
+      .btn-theme-selector {
+        padding: 6px 8px;
+      }
     }
 
     /* 主要容器 */
@@ -141,47 +378,59 @@
       gap: 4px;
     }
 
-    /* 輸入表單區 (人員/日期/節次) */
+    /* 輸入表單區 (人員/日期/節次)：並排於同一列，巡堂日期不掉到下一列 */
     .grid-info {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
+      grid-template-columns: 1.1fr 1.5fr 1fr;
+      gap: 10px;
+      align-items: flex-end;
     }
-    @media (min-width: 540px) {
+
+    @media (max-width: 540px) {
       .grid-info {
-        grid-template-columns: minmax(110px, 1fr) minmax(190px, 1.6fr) minmax(110px, 1fr);
+        grid-template-columns: 1.05fr 1.4fr 0.95fr;
+        gap: 6px;
+      }
+      .md-field label {
+        font-size: 0.75rem;
+      }
+      .md-select, #date {
+        height: 46px;
+        min-height: 46px;
+        font-size: 0.88rem;
+        padding: 0 6px;
+      }
+      #date::-webkit-calendar-picker-indicator {
+        padding: 2px;
+        font-size: 1.1rem;
+        margin-right: -2px;
       }
     }
-    @media (min-width: 768px) {
-      .grid-info {
-        grid-template-columns: 1fr 1.5fr 1fr;
-      }
-    }
-    #date {
-      padding-left: 10px;
-      padding-right: 6px;
-      letter-spacing: -0.2px;
-    }
+
     .md-field {
       display: flex;
       flex-direction: column;
       gap: 4px;
+      min-width: 0;
     }
     .md-field label {
       font-size: 0.8125rem;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--md-sys-color-on-surface-variant);
     }
     .md-input, .md-select, .md-textarea {
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
       height: 48px;
-      border-radius: 8px;
-      border: 1px solid var(--md-sys-color-outline);
+      border-radius: 10px;
+      border: 1.5px solid var(--md-sys-color-outline-variant);
       background-color: #ffffff;
       padding: 0 12px;
       font-size: 1rem;
       color: var(--md-sys-color-on-surface);
       outline: none;
-      transition: border-color 0.15s, box-shadow 0.15s;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
     .md-textarea {
       height: auto;
@@ -190,7 +439,64 @@
     }
     .md-input:focus, .md-select:focus, .md-textarea:focus {
       border-color: var(--md-sys-color-primary);
-      box-shadow: 0 0 0 2px var(--md-sys-color-primary-container);
+      box-shadow: 0 0 0 3px var(--md-sys-color-primary-container);
+    }
+
+    /* 巡堂日期輸入格修復：加高至 52px、使用正常行高確保文字不超出格子、手機端大觸控點 */
+    #date {
+      width: 100%;
+      min-width: 0;
+      max-width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      font-family: inherit;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--md-sys-color-on-surface);
+      background-color: #ffffff;
+      padding: 10px 14px;
+      height: 52px;
+      min-height: 52px;
+      line-height: normal;
+      letter-spacing: normal;
+      border: 1.5px solid var(--md-sys-color-outline-variant);
+      border-radius: 12px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    #date:focus {
+      border-color: var(--md-sys-color-primary);
+      box-shadow: 0 0 0 3px var(--md-sys-color-primary-container);
+    }
+    #date::-webkit-date-and-time-value {
+      text-align: left;
+      line-height: normal;
+      min-height: 1.4em;
+      height: auto;
+      margin: 0;
+      padding: 0;
+      display: block;
+    }
+    #date::-webkit-datetime-edit {
+      padding: 0;
+      line-height: normal;
+    }
+    #date::-webkit-datetime-edit-fields-wrapper {
+      padding: 0;
+    }
+    #date::-webkit-calendar-picker-indicator {
+      cursor: pointer;
+      padding: 6px;
+      margin-right: -2px;
+      opacity: 0.85;
+      font-size: 1.25rem;
+      transition: opacity 0.15s;
+    }
+    #date::-webkit-calendar-picker-indicator:hover {
+      opacity: 1;
     }
 
     /* 水平滾動 Chips 樓層年級過濾 */
@@ -198,29 +504,60 @@
       display: flex;
       gap: 8px;
       overflow-x: auto;
-      padding: 4px 2px 10px 2px;
+      padding: 6px 2px 12px 2px;
       scrollbar-width: none;
       -webkit-overflow-scrolling: touch;
     }
     .chips-filter-bar::-webkit-scrollbar { display: none; }
     .filter-chip {
       background-color: var(--md-sys-color-surface);
-      border: 1px solid var(--md-sys-color-outline-variant);
-      border-radius: 8px;
+      border: 1.5px solid var(--md-sys-color-outline-variant);
+      border-radius: 10px;
       padding: 6px 14px;
       font-size: 0.875rem;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--md-sys-color-on-surface-variant);
       white-space: nowrap;
       cursor: pointer;
       user-select: none;
-      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s ease;
+    }
+    .chip-dot {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      flex-shrink: 0;
     }
     .filter-chip.active {
       background-color: var(--md-sys-color-primary-container);
       color: var(--md-sys-color-on-primary-container);
       border-color: var(--md-sys-color-primary);
-      font-weight: 700;
+      font-weight: 800;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .filter-chip[data-grade="7"].active {
+      background-color: #e0f2fe;
+      color: #0369a1;
+      border-color: #0284c7;
+    }
+    .filter-chip[data-grade="8"].active {
+      background-color: #fef3c7;
+      color: #b45309;
+      border-color: #f59e0b;
+    }
+    .filter-chip[data-grade="9"].active {
+      background-color: #f3e8ff;
+      color: #7e22ce;
+      border-color: #8b5cf6;
+    }
+    .filter-chip[data-grade="special"].active {
+      background-color: #ffe4e6;
+      color: #be123c;
+      border-color: #f43f5e;
     }
 
     /* 班級巡堂卡片 */
@@ -229,19 +566,37 @@
       border: 1px solid var(--md-sys-color-surface-variant);
       border-radius: 14px;
       padding: 14px;
-      margin-bottom: 10px;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-      transition: border-color 0.2s, box-shadow 0.2s;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
     }
     .class-item-card.is-patrolled {
       border-color: var(--md-sys-color-primary);
-      background-color: #fcfdfe;
+      background-color: #fbfdff;
       box-shadow: var(--md-elevation-1);
     }
     .class-item-card.is-empty-class {
       background-color: #f1f3f4;
       border-color: #dadce0;
-      opacity: 0.85;
+      opacity: 0.88;
+    }
+
+    /* 年級專屬色彩指示條與背景柔和標示 */
+    .class-item-card.grade-7 {
+      border-left: 6px solid #0284c7 !important;
+      background: linear-gradient(90deg, rgba(2, 132, 199, 0.05) 0%, rgba(255, 255, 255, 0) 120px), #ffffff;
+    }
+    .class-item-card.grade-8 {
+      border-left: 6px solid #f59e0b !important;
+      background: linear-gradient(90deg, rgba(245, 158, 11, 0.05) 0%, rgba(255, 255, 255, 0) 120px), #ffffff;
+    }
+    .class-item-card.grade-9 {
+      border-left: 6px solid #8b5cf6 !important;
+      background: linear-gradient(90deg, rgba(139, 92, 246, 0.05) 0%, rgba(255, 255, 255, 0) 120px), #ffffff;
+    }
+    .class-item-card.grade-special {
+      border-left: 6px solid #f43f5e !important;
+      background: linear-gradient(90deg, rgba(244, 63, 94, 0.05) 0%, rgba(255, 255, 255, 0) 120px), #ffffff;
     }
 
     /* 卡片頭部 */
@@ -251,27 +606,88 @@
       justify-content: space-between;
       gap: 8px;
       padding-bottom: 8px;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       border-bottom: 1px solid var(--md-sys-color-surface-variant);
     }
+    .badge-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
     .class-badge {
-      font-size: 1.125rem;
+      font-size: 1.15rem;
       font-weight: 800;
-      color: var(--md-sys-color-primary);
-      background-color: var(--md-sys-color-primary-container);
-      padding: 4px 10px;
+      padding: 4px 12px;
       border-radius: 8px;
       letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.2s ease;
     }
+
+    /* 年級班級標籤專屬配色 (七年級：清爽蔚藍、八年級：陽光暖橙、九年級：雅緻紫羅蘭、特教：活力珊瑚紅) */
+    .class-badge.badge-grade-7 {
+      background-color: #e0f2fe;
+      color: #0369a1;
+      border: 1.5px solid #7dd3fc;
+    }
+    .class-badge.badge-grade-8 {
+      background-color: #fef3c7;
+      color: #b45309;
+      border: 1.5px solid #fcd34d;
+    }
+    .class-badge.badge-grade-9 {
+      background-color: #f3e8ff;
+      color: #6d28d9;
+      border: 1.5px solid #d8b4fe;
+    }
+    .class-badge.badge-grade-special {
+      background-color: #ffe4e6;
+      color: #be123c;
+      border: 1.5px solid #fda4af;
+    }
+
+    /* 年級小徽章標籤 */
+    .grade-pill {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 12px;
+      letter-spacing: 0.2px;
+      display: inline-flex;
+      align-items: center;
+    }
+    .grade-pill.grade-pill-7 {
+      background-color: #f0f9ff;
+      color: #0284c7;
+      border: 1px solid #bae6fd;
+    }
+    .grade-pill.grade-pill-8 {
+      background-color: #fffbeb;
+      color: #d97706;
+      border: 1px solid #fde68a;
+    }
+    .grade-pill.grade-pill-9 {
+      background-color: #faf5ff;
+      color: #7c3aed;
+      border: 1px solid #e9d5ff;
+    }
+    .grade-pill.grade-pill-special {
+      background-color: #fff1f2;
+      color: #e11d48;
+      border: 1px solid #fecdd3;
+    }
+
     .header-quick-actions {
       display: flex;
       align-items: center;
       gap: 6px;
     }
     .btn-quick-normal {
-      border: 1px solid #146c2e;
-      background-color: #e6f4ea;
-      color: #137333;
+      border: 1.5px solid #16a34a;
+      background-color: #f0fdf4;
+      color: #15803d;
       border-radius: 16px;
       padding: 4px 10px;
       font-size: 0.8125rem;
@@ -284,9 +700,9 @@
       transition: all 0.15s ease;
     }
     .btn-quick-normal.active {
-      background-color: #137333;
+      background-color: #16a34a;
       color: #ffffff;
-      box-shadow: var(--md-elevation-1);
+      box-shadow: 0 2px 5px rgba(22, 163, 74, 0.35);
     }
 
     /* 班級領域與任課教師橫向並排 */
@@ -423,7 +839,8 @@
     .progress-bar-fill {
       height: 100%;
       width: 0%;
-      background-color: var(--md-sys-color-primary);
+      background: var(--progress-gradient);
+      border-radius: 3px;
       transition: width 0.3s ease;
     }
 
@@ -442,7 +859,7 @@
       align-items: center;
       gap: 8px;
       cursor: pointer;
-      transition: all 0.15s ease;
+      transition: all 0.2s ease;
     }
     .md-fab:active {
       box-shadow: var(--md-elevation-1);
@@ -532,8 +949,47 @@
   <header class="top-app-bar">
     <div class="app-bar-inner">
       <div class="app-title-group">
-        <h1>立新國中巡堂紀錄</h1>
-        <p>115學年度第1學期</p>
+        <img src="data:image/png;base64,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" alt="立新國中校徽" class="school-logo" id="school-logo" width="44" height="44" />
+        <div class="title-text-wrap">
+          <h1>立新國中巡堂紀錄</h1>
+          <p>115學年度第1學期</p>
+        </div>
+      </div>
+      <div class="app-actions">
+        <div class="theme-dropdown-container">
+          <button type="button" class="btn-theme-selector" id="theme-menu-btn" title="切換色彩主題">
+            <span>🎨</span>
+            <span class="theme-btn-text">色彩主題</span>
+            <span class="theme-current-dot" id="current-theme-dot"></span>
+          </button>
+          <div class="theme-dropdown-menu" id="theme-dropdown-menu">
+            <div class="theme-dropdown-header">選擇版面色彩</div>
+            <button type="button" class="theme-item active" data-theme="blue">
+              <span class="theme-swatch" style="background-color: #0b57d0;"></span>
+              <span class="theme-name">立新蔚藍（預設）</span>
+            </button>
+            <button type="button" class="theme-item" data-theme="emerald">
+              <span class="theme-swatch" style="background-color: #0f766e;"></span>
+              <span class="theme-name">清新翡翠綠</span>
+            </button>
+            <button type="button" class="theme-item" data-theme="amber">
+              <span class="theme-swatch" style="background-color: #d97706;"></span>
+              <span class="theme-name">溫暖朝陽橘</span>
+            </button>
+            <button type="button" class="theme-item" data-theme="purple">
+              <span class="theme-swatch" style="background-color: #7c3aed;"></span>
+              <span class="theme-name">典雅知性紫</span>
+            </button>
+            <button type="button" class="theme-item" data-theme="rose">
+              <span class="theme-swatch" style="background-color: #e11d48;"></span>
+              <span class="theme-name">活力山茶紅</span>
+            </button>
+            <button type="button" class="theme-item" data-theme="indigo">
+              <span class="theme-swatch" style="background-color: #4338ca;"></span>
+              <span class="theme-name">沉穩深靛藍</span>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -559,19 +1015,19 @@
     <form id="patrol-form">
       <div class="md-card">
         <div class="grid-info">
-          <div class="md-field">
+          <div class="md-field field-officer">
             <label for="officer">巡堂人員</label>
             <select class="md-select" id="officer">
               <option value="">請選擇人員</option>
             </select>
           </div>
 
-          <div class="md-field">
+          <div class="md-field field-date">
             <label for="date">巡堂日期</label>
             <input class="md-input" id="date" type="date" />
           </div>
 
-          <div class="md-field">
+          <div class="md-field field-period">
             <label for="period">節次</label>
             <select class="md-select" id="period">
               <option value="">請選擇節次</option>
@@ -583,16 +1039,16 @@
 
       <!-- 年級水平滾動 Chips -->
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-        <span style="font-size:0.875rem; font-weight:700; color:#444746;">班級狀況紀錄</span>
-        <span style="font-size:0.75rem; color:#0b57d0;" id="chips-total-hint">點選年級快速過濾</span>
+        <span style="font-size:0.875rem; font-weight:800; color:var(--md-sys-color-on-surface);">班級狀況紀錄</span>
+        <span style="font-size:0.75rem; color:var(--md-sys-color-primary); font-weight:600;" id="chips-total-hint">點選年級快速過濾</span>
       </div>
 
       <div class="chips-filter-bar" id="chips-filter-bar">
         <div class="filter-chip active" data-grade="all">全部班級 (24)</div>
-        <div class="filter-chip" data-grade="7">七年級 (6)</div>
-        <div class="filter-chip" data-grade="8">八年級 (6)</div>
-        <div class="filter-chip" data-grade="9">九年級 (8)</div>
-        <div class="filter-chip" data-grade="special">資源/特教 (4)</div>
+        <div class="filter-chip" data-grade="7"><span class="chip-dot" style="background:#0284c7;"></span>七年級 (6)</div>
+        <div class="filter-chip" data-grade="8"><span class="chip-dot" style="background:#f59e0b;"></span>八年級 (6)</div>
+        <div class="filter-chip" data-grade="9"><span class="chip-dot" style="background:#8b5cf6;"></span>九年級 (8)</div>
+        <div class="filter-chip" data-grade="special"><span class="chip-dot" style="background:#f43f5e;"></span>資源/特教 (4)</div>
       </div>
 
       <!-- 班級清單容器 -->
@@ -650,10 +1106,24 @@
     const INACTIVITY_LIMIT_MS = 30 * 60 * 1000;
 
     const PATROL_OFFICERS = [
-      "陳錦惠校長", "廖佳鈴主任", "張瑞欣主任", "林姉瑤主任",
-      "林世裕組長", "張嘉耘組長", "陳均昇組長", "王景相組長",
-      "陳淑慧組長", "劉育成組長", "陳姿秀組長",
+      "陳O惠校長", "廖O鈴主任", "張O欣主任", "林O瑤主任",
+      "林O裕組長", "張O耘組長", "陳O昇組長", "王O相組長",
+      "陳O慧組長", "劉O成組長", "陳O秀組長",
     ];
+
+    const OFFICER_ALIAS_MAP = {
+      "陳錦惠校長": "陳O惠校長",
+      "廖佳鈴主任": "廖O鈴主任",
+      "張瑞欣主任": "張O欣主任",
+      "林姉瑤主任": "林O瑤主任",
+      "林世裕組長": "林O裕組長",
+      "張嘉耘組長": "張O耘組長",
+      "陳均昇組長": "陳O昇組長",
+      "王景相組長": "王O相組長",
+      "陳淑慧組長": "陳O慧組長",
+      "劉育成組長": "劉O成組長",
+      "陳姿秀組長": "陳O秀組長",
+    };
 
     const PERIODS = ["第一節", "第二節", "第三節", "第四節", "第五節", "第六節", "第七節", "第八節"];
 
@@ -907,7 +1377,7 @@
         const grade = getGradeOfClass(className);
 
         const card = document.createElement("div");
-        card.className = `class-item-card ${isChecked ? "is-patrolled" : ""} ${isNoClass ? "is-empty-class" : ""}`;
+        card.className = `class-item-card grade-${grade} ${isChecked ? "is-patrolled" : ""} ${isNoClass ? "is-empty-class" : ""}`;
         card.dataset.className = className;
         card.dataset.grade = grade;
 
@@ -915,10 +1385,21 @@
         const headerRow = document.createElement("div");
         headerRow.className = "card-header-row";
 
+        const badgeWrap = document.createElement("div");
+        badgeWrap.className = "badge-wrap";
+
         const badge = document.createElement("span");
-        badge.className = "class-badge";
+        badge.className = `class-badge badge-grade-${grade}`;
         badge.textContent = className;
-        headerRow.appendChild(badge);
+        badgeWrap.appendChild(badge);
+
+        const gradeLabelMap = { "7": "七年級", "8": "八年級", "9": "九年級", "special": "特教/資源" };
+        const gradePill = document.createElement("span");
+        gradePill.className = `grade-pill grade-pill-${grade}`;
+        gradePill.textContent = gradeLabelMap[grade] || "";
+        badgeWrap.appendChild(gradePill);
+
+        headerRow.appendChild(badgeWrap);
 
         const actionsDiv = document.createElement("div");
         actionsDiv.className = "header-quick-actions";
@@ -1089,8 +1570,16 @@
       }
     }
 
+    function getLocalDateStr() {
+      const d = new Date();
+      const y = d.getFullYear();
+      const m = String(d.getMonth() + 1).padStart(2, "0");
+      const day = String(d.getDate()).padStart(2, "0");
+      return `${y}-${m}-${day}`;
+    }
+
     function restoreDraft() {
-      dateInput.value = new Date().toISOString().slice(0, 10);
+      dateInput.value = getLocalDateStr();
       periodSelect.value = getCurrentPeriodLabel();
 
       const raw = localStorage.getItem(STORAGE_KEY);
@@ -1102,7 +1591,9 @@
       }
       try {
         const draft = JSON.parse(raw);
-        if (draft.officer) officerSelect.value = draft.officer;
+        if (draft.officer) {
+          officerSelect.value = OFFICER_ALIAS_MAP[draft.officer] || draft.officer;
+        }
         if (draft.otherConditions) otherConditionsTextarea.value = draft.otherConditions;
 
         if (draft.classRecords) {
@@ -1140,7 +1631,7 @@
     }
 
     function clearDraftAndForm() {
-      dateInput.value = new Date().toISOString().slice(0, 10);
+      dateInput.value = getLocalDateStr();
       officerSelect.value = "";
       periodSelect.value = getCurrentPeriodLabel();
       otherConditionsTextarea.value = "";
@@ -1362,7 +1853,71 @@
       });
     }
 
+
+    /* 色彩主題切換器邏輯 */
+    const THEME_STORAGE_KEY = "patrol_theme_v1";
+    const themeMenuBtn = document.getElementById("theme-menu-btn");
+    const themeDropdownMenu = document.getElementById("theme-dropdown-menu");
+    const currentThemeDot = document.getElementById("current-theme-dot");
+    const themeItems = document.querySelectorAll(".theme-item");
+
+    function applyTheme(themeName) {
+      document.documentElement.setAttribute("data-theme", themeName);
+      try {
+        localStorage.setItem(THEME_STORAGE_KEY, themeName);
+      } catch (e) {}
+
+      themeItems.forEach(item => {
+        const isActive = item.dataset.theme === themeName;
+        item.classList.toggle("active", isActive);
+      });
+
+      const activeItem = document.querySelector(`.theme-item[data-theme="${themeName}"]`);
+      if (activeItem && currentThemeDot) {
+        const swatch = activeItem.querySelector(".theme-swatch");
+        if (swatch) currentThemeDot.style.backgroundColor = swatch.style.backgroundColor;
+      }
+
+      const metaTheme = document.querySelector('meta[name="theme-color"]');
+      if (metaTheme && activeItem) {
+        const swatch = activeItem.querySelector(".theme-swatch");
+        if (swatch) metaTheme.setAttribute("content", swatch.style.backgroundColor);
+      }
+    }
+
+    function initTheme() {
+      let savedTheme = "blue";
+      try {
+        savedTheme = localStorage.getItem(THEME_STORAGE_KEY) || "blue";
+      } catch (e) {}
+      applyTheme(savedTheme);
+
+      if (themeMenuBtn && themeDropdownMenu) {
+        themeMenuBtn.addEventListener("click", function (e) {
+          e.stopPropagation();
+          themeDropdownMenu.classList.toggle("show");
+        });
+
+        document.addEventListener("click", function (e) {
+          if (!themeMenuBtn.contains(e.target) && !themeDropdownMenu.contains(e.target)) {
+            themeDropdownMenu.classList.remove("show");
+          }
+        });
+
+        themeItems.forEach(item => {
+          item.addEventListener("click", function () {
+            const t = this.dataset.theme;
+            if (t) {
+              applyTheme(t);
+              themeDropdownMenu.classList.remove("show");
+            }
+          });
+        });
+      }
+    }
+
     (function init() {
+      initTheme();
       initOfficerOptions();
       initPeriodOptions();
       CLASSES.forEach(cls => {
