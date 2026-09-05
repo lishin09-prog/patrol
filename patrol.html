@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0b57d0" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <title>立新國中巡堂紀錄表</title>
+  
+  <style>
+    :root, [data-theme="blue"] {
+      --md-sys-color-primary: #0b57d0;
+      --md-sys-color-primary-dark: #0842a0;
+      --md-sys-color-on-primary: #ffffff;
+      --md-sys-color-primary-container: #d3e3fd;
+      --md-sys-color-on-primary-container: #041e49;
+      --md-sys-color-surface: #f8fafd;
+      --md-sys-color-on-surface: #1f1f1f;
+      --md-sys-color-surface-variant: #e1e3e1;
+      --md-sys-color-on-surface-variant: #444746;
+      --md-sys-color-outline: #747775;
+      --md-sys-color-outline-variant: #c4c7c5;
+      --md-sys-color-card: #ffffff;
+      --theme-meta-color: #0b57d0;
+      --header-accent-color: #0b57d0;
+      --progress-gradient: linear-gradient(90deg, #0b57d0, #38bdf8);
+    }
+
+    [data-theme="emerald"] {
+      --md-sys-color-primary: #0f766e;
+      --md-sys-color-primary-dark: #0b5650;
+      --md-sys-color-on-primary: #ffffff;
+      --md-sys-color-primary-container: #ccfbf1;
+      --md-sys-color-on-primary-container: #042f2e;
+      --md-sys-color-surface: #f0fdf4;
+      --md-sys-color-on-surface: #19241e;
+      --md-sys-color-surface-variant: #d1e7dd;
+      --md-sys-color-on-surface-variant: #3d5047;
+      --md-sys-color-outline: #6b8478;
+      --md-sys-color-outline-variant: #b8d5c8;
+      --md-sys-color-card: #ffffff;
+      --theme-meta-color: #0f766e;
+      --header-accent-color: #0f766e;
+      --progress-gradient: linear-gradient(90deg, #0f766e, #34d399);
+    }
+
+    [data-theme="amber"] {
+      --md-sys-color-primary: #d97706;
+      --md-sys-color-primary-dark: #b45309;
+      --md-sys-color-on-primary: #ffffff;
+      --md-sys-color-primary-container: #fef3c7;
+      --md-sys-color-on-primary-container: #451a03;
+      --md-sys-color-surface: #fffbeb;
+      --md-sys-color-on-surface: #261e14;
+      --md-sys-color-surface-variant: #ede4d3;
+      --md-sys-color-on-surface-variant: #594d3e;
+      --md-sys-color-outline: #8c7c68;
+      --md-sys-color-outline-variant: #ddd0be;
+      --md-sys-color-card: #ffffff;
+      --theme-meta-color: #d97706;
+      --header-accent-color: #d97706;
+      --progress-gradient: linear-gradient(90deg, #d97706, #fbbf24);
+    }
+
+    [data-theme="purple"] {
+      --md-sys-color-primary: #7c3aed;
+      --md-sys-color-primary-dark: #5b21b6;
+      --md-sys-color-on-primary: #ffffff;
+      --md-sys-color-primary-container: #ede9fe;
+      --md-sys-color-on-primary-container: #2e1065;
+      --md-sys-color-surface: #faf5ff;
+      --md-sys-color-on-surface: #22182e;
+      --md-sys-color-surface-variant: #e6ddf5;
+      --md-sys-color-on-surface-variant: #504461;
+      --md-sys-color-outline: #7f7094;
+      --md-sys-color-outline-variant: #d6caed;
+      --md-sys-color-card: #ffffff;
+      --theme-meta-color: #7c3aed;
+      --header-accent-color: #7c3aed;
+      --progress-gradient: linear-gradient(90deg, #7c3aed, #c084fc);
+    }
+
+    [data-theme="rose"] {
+      --md-sys-color-primary: #e11d48;
+      --md-sys-color-primary-dark: #9f1239;
+      --md-sys-color-on-primary: #ffffff;
+      --md-sys-color-primary-container: #ffe4e6;
+      --md-sys-color-on-primary-container: #4c0519;
+      --md-sys-color-surface: #fff1f2;
+      --md-sys-color-on-surface: #2b181c;
+      --md-sys-color-surface-variant: #f2d8dc;
+      --md-sys-color-on-surface-variant: #614247;
+      --md-sys-color-outline: #946f75;
+      --md-sys-color-outline-variant: #ecc4ca;
+      --md-sys-color-card: #ffffff;
+      --theme-meta-color: #e11d48;
+      --header-accent-color: #e11d48;
+      --progress-gradient: linear-gradient(90deg, #e11d48, #fb7185);
+    }
+
+    [data-theme="indigo"] {
+      --md-sys-color-primary: #4338ca;
+      --md-sys-color-primary-dark: #312e81;
+      --md-sys-color-on-primary: #ffffff;
+      --md-sys-color-primary-container: #e0e7ff;
+      --md-sys-color-on-primary-container: #1e1b4b;
+      --md-sys-color-surface: #f5f7ff;
+      --md-sys-color-on-surface: #1e1e24;
+      --md-sys-color-surface-variant: #dadaf5;
+      --md-sys-color-on-surface-variant: #49495c;
+      --md-sys-color-outline: #797994;
+      --md-sys-color-outline-variant: #c7c7e6;
+      --md-sys-color-card: #ffffff;
+      --theme-meta-color: #4338ca;
+      --header-accent-color: #4338ca;
+      --progress-gradient: linear-gradient(90deg, #4338ca, #818cf8);
+    }
+
+    :root {
+      --md-sys-color-green-container: #d1f4dc;
+      --md-sys-color-on-green-container: #083c16;
+      --md-sys-color-amber-container: #fef0c7;
+      --md-sys-color-on-amber-container: #7a3e00;
+      --md-elevation-1: 0px 1px 3px 1px rgba(0, 0, 0, 0.08), 0px 1px 2px 0px rgba(0, 0, 0, 0.12);
+      --md-elevation-2: 0px 2px 6px 2px rgba(0, 0, 0, 0.09), 0px 1px 2px 0px rgba(0, 0, 0, 0.14);
+      --md-elevation-3: 0px 4px 12px 3px rgba(0, 0, 0, 0.12), 0px 2px 4px 0px rgba(0, 0, 0, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: Roboto, "Noto Sans TC", "Segoe UI", system-ui, sans-serif;
+      background-color: var(--md-sys-color-surface);
+      color: var(--md-sys-color-on-surface);
+      line-height: 1.5;
+      padding-bottom: 96px; /* 為底部 FAB 與狀態列預留空間 */
+      font-size: 16px;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    /* 頂部 Android Material 3 AppBar */
+    .top-app-bar {
+      background-color: #ffffff;
+      border-bottom: 1px solid var(--md-sys-color-surface-variant);
+      border-top: 3.5px solid var(--header-accent-color);
+      padding: 10px 16px;
+      box-shadow: var(--md-elevation-1);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      transition: border-color 0.25s ease;
+    }
+    .app-bar-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .app-title-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+    .school-logo {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      flex-shrink: 0;
+      border-radius: 8px;
+      background-color: #ffffff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+      padding: 2px;
+      border: 1px solid var(--md-sys-color-outline-variant);
+    }
+    .title-text-wrap {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+    .title-text-wrap h1 {
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: var(--md-sys-color-primary);
+      letter-spacing: 0.3px;
+      line-height: 1.3;
+      white-space: nowrap;
+      transition: color 0.25s ease;
+    }
+    .title-text-wrap p {
+      font-size: 0.8125rem;
+      color: var(--md-sys-color-on-surface-variant);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .app-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    /* 主題切換器樣式 */
+    .theme-dropdown-container {
+      position: relative;
+      display: inline-block;
+    }
+    .btn-theme-selector {
+      background-color: var(--md-sys-color-surface);
+      border: 1.5px solid var(--md-sys-color-outline-variant);
+      border-radius: 20px;
+      padding: 6px 12px;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--md-sys-color-primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      outline: none;
+      user-select: none;
+    }
+    .btn-theme-selector:hover {
+      background-color: var(--md-sys-color-primary-container);
+      border-color: var(--md-sys-color-primary);
+    }
+    .theme-current-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--md-sys-color-primary);
+      box-shadow: 0 0 0 2px #fff;
+    }
+    .theme-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: var(--md-elevation-3);
+      border: 1px solid var(--md-sys-color-outline-variant);
+      padding: 8px 6px;
+      min-width: 185px;
+      z-index: 100;
+      animation: themeFadeIn 0.15s ease-out;
+    }
+    .theme-dropdown-menu.show {
+      display: block;
+    }
+    @keyframes themeFadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .theme-dropdown-header {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--md-sys-color-on-surface-variant);
+      padding: 4px 10px 6px 10px;
+      border-bottom: 1px solid var(--md-sys-color-surface-variant);
+      margin-bottom: 4px;
+    }
+    .theme-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      padding: 8px 10px;
+      border: none;
+      background: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--md-sys-color-on-surface);
+      text-align: left;
+      transition: background 0.15s ease;
+    }
+    .theme-item:hover {
+      background-color: var(--md-sys-color-surface);
+    }
+    .theme-item.active {
+      background-color: var(--md-sys-color-primary-container);
+      color: var(--md-sys-color-on-primary-container);
+      font-weight: 700;
+    }
+    .theme-swatch {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.15);
+    }
+
+    /* 手機與平板版瀏覽：標題不固定在最上方，隨頁面滑動自然捲動，釋放螢幕最大可視空間 */
+    @media (max-width: 768px) {
+      .top-app-bar {
+        position: relative; /* 瀏覽滑動時不固定在最上方 */
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      }
+      .school-logo {
+        width: 38px;
+        height: 38px;
+      }
+      .title-text-wrap h1 {
+        font-size: 1.05rem;
+      }
+      .title-text-wrap p {
+        font-size: 0.72rem;
+      }
+      .btn-theme-selector .theme-btn-text {
+        display: none;
+      }
+      .btn-theme-selector {
+        padding: 6px 8px;
+      }
+    }
+
+    /* 主要容器 */
+    .main-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 12px 16px;
+    }
+
+    /* Material 3 卡片 */
+    .md-card {
+      background-color: var(--md-sys-color-card);
+      border-radius: 16px;
+      border: 1px solid var(--md-sys-color-surface-variant);
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: var(--md-elevation-1);
+    }
+
+    /* 注意事項折疊面板 */
+    details.notes-accordion summary {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: var(--md-sys-color-primary);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+    }
+    details.notes-accordion summary::-webkit-details-marker { display: none; }
+    details.notes-accordion summary::after {
+      content: "▼";
+      font-size: 0.75rem;
+      transition: transform 0.2s;
+    }
+    details.notes-accordion[open] summary::after {
+      transform: rotate(180deg);
+    }
+    .notes-content {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--md-sys-color-surface-variant);
+      font-size: 0.8125rem;
+      color: var(--md-sys-color-on-surface-variant);
+    }
+    .notes-content ul {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    /* 輸入表單區 (人員/日期/節次)：手機端巡堂人員單獨一列，巡堂日期與節次並排於第二列 */
+    .grid-info {
+      display: grid;
+      grid-template-columns: 1.55fr 1fr;
+      gap: 12px 10px;
+      align-items: flex-end;
+    }
+    .grid-info .field-officer {
+      grid-column: 1 / -1; /* 手機端：巡堂人員獨佔整列 */
+    }
+    .grid-info .field-date {
+      grid-column: 1; /* 手機端：巡堂日期與節次同列 (左側寬欄，完整顯示年月日) */
+      min-width: 0;
+    }
+    .grid-info .field-period {
+      grid-column: 2; /* 手機端：節次 (右側欄) */
+      min-width: 0;
+    }
+
+    @media (min-width: 680px) {
+      .grid-info {
+        grid-template-columns: 1.1fr 1.6fr 1.1fr;
+        gap: 14px;
+        align-items: flex-end;
+      }
+      .grid-info .field-officer {
+        grid-column: 1;
+      }
+      .grid-info .field-date {
+        grid-column: 2;
+      }
+      .grid-info .field-period {
+        grid-column: 3;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .grid-info {
+        grid-template-columns: 1.55fr 1fr;
+        gap: 10px 8px;
+      }
+      #date {
+        padding: 0 8px;
+        font-size: 0.95rem;
+      }
+      .field-period .md-select {
+        padding: 0 6px;
+        font-size: 0.92rem;
+      }
+      #date::-webkit-calendar-picker-indicator {
+        font-size: 1.1rem;
+        padding: 2px;
+      }
+    }
+
+    .md-field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 0;
+    }
+    .md-field label {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--md-sys-color-on-surface-variant);
+    }
+    .md-input, .md-select, .md-textarea {
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+      height: 48px;
+      border-radius: 10px;
+      border: 1.5px solid var(--md-sys-color-outline-variant);
+      background-color: #ffffff;
+      padding: 0 12px;
+      font-size: 1rem;
+      color: var(--md-sys-color-on-surface);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .md-textarea {
+      height: auto;
+      min-height: 80px;
+      padding: 10px 12px;
+    }
+    .md-input:focus, .md-select:focus, .md-textarea:focus {
+      border-color: var(--md-sys-color-primary);
+      box-shadow: 0 0 0 3px var(--md-sys-color-primary-container);
+    }
+
+    /* 巡堂日期輸入格：寬度充裕完整顯示年月日、高度與選單齊平48px、行高正常不超出 */
+    #date {
+      width: 100%;
+      min-width: 0;
+      max-width: 100%;
+      box-sizing: border-box;
+      display: block;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--md-sys-color-on-surface);
+      background-color: #ffffff;
+      padding: 0 10px;
+      height: 48px;
+      min-height: 48px;
+      line-height: normal;
+      letter-spacing: normal;
+      border: 1.5px solid var(--md-sys-color-outline-variant);
+      border-radius: 10px;
+      outline: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    #date:focus {
+      border-color: var(--md-sys-color-primary);
+      box-shadow: 0 0 0 3px var(--md-sys-color-primary-container);
+    }
+    #date::-webkit-date-and-time-value {
+      text-align: left;
+      line-height: normal;
+      min-height: 1.5em;
+      height: auto;
+      margin: 0;
+      padding: 0;
+      display: block;
+    }
+    #date::-webkit-datetime-edit {
+      padding: 0;
+      line-height: normal;
+    }
+    #date::-webkit-calendar-picker-indicator {
+      cursor: pointer;
+      padding: 6px;
+      margin-right: -2px;
+      opacity: 0.85;
+      font-size: 1.25rem;
+      transition: opacity 0.15s;
+    }
+    #date::-webkit-calendar-picker-indicator:hover {
+      opacity: 1;
+    }
+
+    /* 水平滾動 Chips 樓層年級過濾 */
+    .chips-filter-bar {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 6px 2px 12px 2px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .chips-filter-bar::-webkit-scrollbar { display: none; }
+    .filter-chip {
+      background-color: var(--md-sys-color-surface);
+      border: 1.5px solid var(--md-sys-color-outline-variant);
+      border-radius: 10px;
+      padding: 6px 14px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--md-sys-color-on-surface-variant);
+      white-space: nowrap;
+      cursor: pointer;
+      user-select: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s ease;
+    }
+    .chip-dot {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .filter-chip.active {
+      background-color: var(--md-sys-color-primary-container);
+      color: var(--md-sys-color-on-primary-container);
+      border-color: var(--md-sys-color-primary);
+      font-weight: 800;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .filter-chip[data-grade="7"].active {
+      background-color: #e0f2fe;
+      color: #0369a1;
+      border-color: #0284c7;
+    }
+    .filter-chip[data-grade="8"].active {
+      background-color: #fef3c7;
+      color: #b45309;
+      border-color: #f59e0b;
+    }
+    .filter-chip[data-grade="9"].active {
+      background-color: #f3e8ff;
+      color: #7e22ce;
+      border-color: #8b5cf6;
+    }
+    .filter-chip[data-grade="special"].active {
+      background-color: #ffe4e6;
+      color: #be123c;
+      border-color: #f43f5e;
+    }
+
+    /* 班級巡堂卡片 */
+    .class-item-card {
+      background-color: #ffffff;
+      border: 1px solid var(--md-sys-color-surface-variant);
+      border-radius: 14px;
+      padding: 14px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+    }
+    .class-item-card.is-patrolled {
+      border-color: var(--md-sys-color-primary);
+      background-color: #fbfdff;
+      box-shadow: var(--md-elevation-1);
+    }
+    .class-item-card.is-empty-class {
+      background-color: #f1f3f4;
+      border-color: #dadce0;
+      opacity: 0.88;
+    }
+
+    /* 年級專屬色彩指示條與背景柔和標示 */
+    .class-item-card.grade-7 {
+      border-left: 6px solid #0284c7 !important;
+      background: linear-gradient(90deg, rgba(2, 132, 199, 0.05) 0%, rgba(255, 255, 255, 0) 120px), #ffffff;
+    }
+    .class-item-card.grade-8 {
+      border-left: 6px solid #f59e0b !important;
+      background: linear-gradient(90deg, rgba(245, 158, 11, 0.05) 0%, rgba(255, 255, 255, 0) 120px), #ffffff;
+    }
+    .class-item-card.grade-9 {
+      border-left: 6px solid #8b5cf6 !important;
+      background: linear-gradient(90deg, rgba(139, 92, 246, 0.05) 0%, rgba(255, 255, 255, 0) 120px), #ffffff;
+    }
+    .class-item-card.grade-special {
+      border-left: 6px solid #f43f5e !important;
+      background: linear-gradient(90deg, rgba(244, 63, 94, 0.05) 0%, rgba(255, 255, 255, 0) 120px), #ffffff;
+    }
+
+    /* 卡片頭部 */
+    .card-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-bottom: 8px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid var(--md-sys-color-surface-variant);
+    }
+    .class-badge {
+      font-size: 1.15rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 8px;
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+
+    /* 年級班級標籤專屬配色 (七年級：清爽蔚藍、八年級：陽光暖橙、九年級：雅緻紫羅蘭、特教：活力珊瑚紅) */
+    .class-badge.badge-grade-7 {
+      background-color: #e0f2fe;
+      color: #0369a1;
+      border: 1.5px solid #7dd3fc;
+    }
+    .class-badge.badge-grade-8 {
+      background-color: #fef3c7;
+      color: #b45309;
+      border: 1.5px solid #fcd34d;
+    }
+    .class-badge.badge-grade-9 {
+      background-color: #f3e8ff;
+      color: #6d28d9;
+      border: 1.5px solid #d8b4fe;
+    }
+    .class-badge.badge-grade-special {
+      background-color: #ffe4e6;
+      color: #be123c;
+      border: 1.5px solid #fda4af;
+    }
+
+    .header-quick-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-quick-normal {
+      border: 1.5px solid #16a34a;
+      background-color: #f0fdf4;
+      color: #15803d;
+      border-radius: 16px;
+      padding: 4px 10px;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      user-select: none;
+      transition: all 0.15s ease;
+    }
+    .btn-quick-normal.active {
+      background-color: #16a34a;
+      color: #ffffff;
+      box-shadow: 0 2px 5px rgba(22, 163, 74, 0.35);
+    }
+
+    /* 班級領域與任課教師橫向並排 */
+    .class-info-inputs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .compact-select {
+      height: 38px;
+      border-radius: 6px;
+      border: 1px solid var(--md-sys-color-outline-variant);
+      padding: 0 8px;
+      font-size: 0.875rem;
+      background-color: #fafafa;
+      width: 100%;
+      outline: none;
+    }
+    .compact-select:focus {
+      border-color: var(--md-sys-color-primary);
+      background-color: #ffffff;
+    }
+
+    /* 巡堂狀態 Chips 標籤群組 */
+    .status-chips-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .chips-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .action-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 11px;
+      border-radius: 8px;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      border: 1px solid var(--md-sys-color-outline-variant);
+      background-color: #ffffff;
+      color: var(--md-sys-color-on-surface-variant);
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s ease;
+    }
+    .action-chip:active { transform: scale(0.96); }
+    .action-chip input { display: none; }
+
+    /* 正向指標 (綠色) */
+    .action-chip.chip-green.checked {
+      background-color: var(--md-sys-color-green-container);
+      color: var(--md-sys-color-on-green-container);
+      border-color: #146c2e;
+      font-weight: 700;
+    }
+    /* 提醒指標 (黃/橘色) */
+    .action-chip.chip-amber.checked {
+      background-color: var(--md-sys-color-amber-container);
+      color: var(--md-sys-color-on-amber-container);
+      border-color: #b06000;
+      font-weight: 700;
+    }
+    /* 教室未排課 (灰色) */
+    .action-chip.chip-gray.checked {
+      background-color: #dadce0;
+      color: #202124;
+      border-color: #5f6368;
+      font-weight: 700;
+    }
+    .action-chip.disabled {
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    /* 備註欄 */
+    .remarks-input {
+      width: 100%;
+      height: 38px;
+      border-radius: 6px;
+      border: 1px solid var(--md-sys-color-outline-variant);
+      padding: 0 10px;
+      font-size: 0.875rem;
+      background-color: #fafafa;
+      outline: none;
+    }
+    .remarks-input:focus {
+      background-color: #ffffff;
+      border-color: var(--md-sys-color-primary);
+    }
+
+    /* 底部 Material Bottom AppBar / FAB */
+    .bottom-app-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      background-color: #ffffff;
+      border-top: 1px solid var(--md-sys-color-surface-variant);
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.08);
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+    }
+    .progress-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .progress-label {
+      font-size: 0.75rem;
+      color: var(--md-sys-color-on-surface-variant);
+    }
+    .progress-count {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--md-sys-color-primary);
+    }
+    .progress-bar-bg {
+      width: 110px;
+      height: 6px;
+      background-color: var(--md-sys-color-surface-variant);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--progress-gradient);
+      border-radius: 3px;
+      transition: width 0.3s ease;
+    }
+
+    /* Material FAB 按鈕 */
+    .md-fab {
+      background-color: var(--md-sys-color-primary);
+      color: var(--md-sys-color-on-primary);
+      border: none;
+      border-radius: 28px;
+      height: 48px;
+      padding: 0 20px;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      box-shadow: var(--md-elevation-2);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .md-fab:active {
+      box-shadow: var(--md-elevation-1);
+      transform: scale(0.98);
+    }
+    .md-fab:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    /* 對話框 Dialog */
+    .dialog-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.45);
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .dialog-overlay.show { display: flex; }
+    .dialog-surface {
+      background-color: #ffffff;
+      border-radius: 20px;
+      max-width: 360px;
+      width: 100%;
+      padding: 20px;
+      box-shadow: var(--md-elevation-3);
+    }
+    .dialog-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #b3261e;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dialog-body {
+      font-size: 0.875rem;
+      color: var(--md-sys-color-on-surface-variant);
+      margin-bottom: 16px;
+    }
+    .dialog-list {
+      max-height: 120px;
+      overflow-y: auto;
+      background-color: var(--md-sys-color-surface);
+      border-radius: 8px;
+      padding: 8px 12px;
+      margin: 8px 0;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--md-sys-color-on-surface);
+    }
+    .dialog-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+    .btn-dialog-text {
+      background: none;
+      border: none;
+      color: var(--md-sys-color-primary);
+      font-weight: 700;
+      padding: 8px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.875rem;
+    }
+    .btn-dialog-filled {
+      background-color: var(--md-sys-color-primary);
+      color: #fff;
+      border: none;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.875rem;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Material 3 頂部 AppBar -->
+  <header class="top-app-bar">
+    <div class="app-bar-inner">
+      <div class="app-title-group">
+        <img src="data:image/png;base64,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" alt="立新國中校徽" class="school-logo" id="school-logo" width="44" height="44" />
+        <div class="title-text-wrap">
+          <h1>立新國中巡堂紀錄</h1>
+          <p>115學年度第1學期</p>
+        </div>
+      </div>
+      <div class="app-actions">
+        <div class="theme-dropdown-container">
+          <button type="button" class="btn-theme-selector" id="theme-menu-btn" title="切換色彩主題">
+            <span>🎨</span>
+            <span class="theme-btn-text">色彩主題</span>
+            <span class="theme-current-dot" id="current-theme-dot"></span>
+          </button>
+          <div class="theme-dropdown-menu" id="theme-dropdown-menu">
+            <div class="theme-dropdown-header">選擇版面色彩</div>
+            <button type="button" class="theme-item active" data-theme="blue">
+              <span class="theme-swatch" style="background-color: #0b57d0;"></span>
+              <span class="theme-name">立新蔚藍（預設）</span>
+            </button>
+            <button type="button" class="theme-item" data-theme="emerald">
+              <span class="theme-swatch" style="background-color: #0f766e;"></span>
+              <span class="theme-name">清新翡翠綠</span>
+            </button>
+            <button type="button" class="theme-item" data-theme="amber">
+              <span class="theme-swatch" style="background-color: #d97706;"></span>
+              <span class="theme-name">溫暖朝陽橘</span>
+            </button>
+            <button type="button" class="theme-item" data-theme="purple">
+              <span class="theme-swatch" style="background-color: #7c3aed;"></span>
+              <span class="theme-name">典雅知性紫</span>
+            </button>
+            <button type="button" class="theme-item" data-theme="rose">
+              <span class="theme-swatch" style="background-color: #e11d48;"></span>
+              <span class="theme-name">活力山茶紅</span>
+            </button>
+            <button type="button" class="theme-item" data-theme="indigo">
+              <span class="theme-swatch" style="background-color: #4338ca;"></span>
+              <span class="theme-name">沉穩深靛藍</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <!-- 巡堂注意事項 (可折疊) -->
+    <div class="md-card">
+      <details class="notes-accordion">
+        <summary>📋 巡堂注意事項（點擊展開）</summary>
+        <div class="notes-content">
+          <ul>
+            <li>紀錄將自動彙整至學校 Google 試算表。</li>
+            <li style="color:#137333; font-weight:600;">已啟用自動儲存；若連續 30 分鐘無操作將自動清除草稿維護安全。</li>
+            <li style="color:#b3261e; font-weight:600;">請務必確認上課教師，若表現優良請多予肯定。</li>
+            <li>「教室未排課」：僅在原教室確認空堂時勾選。若在專科教室或戶外課，請到場巡堂並於備註註明。</li>
+            <li style="color:#b3261e; font-weight:600;">重大緊急安全問題請逕行以 LINE 群組通報！</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <!-- 基本資訊輸入卡片 -->
+    <form id="patrol-form">
+      <div class="md-card">
+        <div class="grid-info">
+          <div class="md-field field-officer">
+            <label for="officer">巡堂人員</label>
+            <select class="md-select" id="officer">
+              <option value="">請選擇人員</option>
+            </select>
+          </div>
+
+          <div class="md-field field-date">
+            <label for="date">巡堂日期</label>
+            <input class="md-input" id="date" type="date" />
+          </div>
+
+          <div class="md-field field-period">
+            <label for="period">節次</label>
+            <select class="md-select" id="period">
+              <option value="">請選擇節次</option>
+            </select>
+          </div>
+        </div>
+        <div id="last-saved-text" style="font-size:0.75rem; color:#5f6368; margin-top:8px; text-align:right;"></div>
+      </div>
+
+      <!-- 年級水平滾動 Chips -->
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+        <span style="font-size:0.875rem; font-weight:800; color:var(--md-sys-color-on-surface);">班級狀況紀錄</span>
+        <span style="font-size:0.75rem; color:var(--md-sys-color-primary); font-weight:600;" id="chips-total-hint">點選年級快速過濾</span>
+      </div>
+
+      <div class="chips-filter-bar" id="chips-filter-bar">
+        <div class="filter-chip active" data-grade="all">全部班級 (24)</div>
+        <div class="filter-chip" data-grade="7"><span class="chip-dot" style="background:#0284c7;"></span>七年級 (6)</div>
+        <div class="filter-chip" data-grade="8"><span class="chip-dot" style="background:#f59e0b;"></span>八年級 (6)</div>
+        <div class="filter-chip" data-grade="9"><span class="chip-dot" style="background:#8b5cf6;"></span>九年級 (8)</div>
+        <div class="filter-chip" data-grade="special"><span class="chip-dot" style="background:#f43f5e;"></span>資源/特教 (4)</div>
+      </div>
+
+      <!-- 班級清單容器 -->
+      <div id="classes-list-container">
+        <!-- 由 JS 動態生成 Material 3 班級卡片 -->
+      </div>
+
+      <!-- 其他特殊狀況說明卡片 -->
+      <div class="md-card" style="margin-top:16px;">
+        <div class="md-field">
+          <label for="other-conditions" style="font-size:0.875rem; font-weight:700;">其他特殊狀況說明</label>
+          <textarea class="md-textarea" id="other-conditions" placeholder="若有上述選項未涵蓋之情況，請在此詳述..."></textarea>
+        </div>
+        <div style="margin-top:12px; display:flex; justify-content:flex-end;">
+          <button type="button" id="clear-btn" style="background:none; border:none; color:#5f6368; font-size:0.875rem; cursor:pointer; padding:6px 12px;">清除草稿</button>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <!-- 底部固定浮動操作列 -->
+  <footer class="bottom-app-bar">
+    <div class="progress-info">
+      <div class="progress-label">巡查進度</div>
+      <div class="progress-count" id="progress-count-text">0 / 24 班</div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="progress-bar-fill"></div>
+      </div>
+    </div>
+    <button type="button" class="md-fab" id="fab-submit-btn">
+      <span>🚀</span>
+      <span>提交紀錄</span>
+    </button>
+  </footer>
+
+  <!-- 未勾選提醒對話框 -->
+  <div class="dialog-overlay" id="confirm-dialog">
+    <div class="dialog-surface">
+      <h3 class="dialog-title"><span>⚠️</span> 巡堂提醒</h3>
+      <p class="dialog-body">偵測到以下班級尚未填寫任何巡堂狀況：</p>
+      <div class="dialog-list">
+        <ul id="unchecked-class-list" style="padding-left:18px;"></ul>
+      </div>
+      <p style="font-size:0.8125rem; color:#5f6368; margin-bottom:16px;">如刻意跳過（空堂）請點「繼續提交」，若漏填請點「返回修正」。</p>
+      <div class="dialog-actions">
+        <button type="button" class="btn-dialog-text" id="dialog-cancel">返回修正</button>
+        <button type="button" class="btn-dialog-filled" id="dialog-continue">繼續提交</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzTnBcMoU3npJHYdJfZFROHHb3mwpDdM2lcVd8uKKOGA-rjMjZly4JCyHfg0iW8gA67/exec";
+    const STORAGE_KEY = "patrol_form_react_v1"; 
+    const INACTIVITY_LIMIT_MS = 30 * 60 * 1000;
+
+    const PATROL_OFFICERS = [
+      "陳O惠校長", "廖O鈴主任", "張O欣主任", "林O瑤主任",
+      "林O裕組長", "張O耘組長", "陳O昇組長", "王O相組長",
+      "陳O慧組長", "劉O成組長", "陳O秀組長",
+    ];
+
+    const OFFICER_ALIAS_MAP = {
+      "陳錦惠校長": "陳O惠校長",
+      "廖佳鈴主任": "廖O鈴主任",
+      "張瑞欣主任": "張O欣主任",
+      "林姉瑤主任": "林O瑤主任",
+      "林世裕組長": "林O裕組長",
+      "張嘉耘組長": "張O耘組長",
+      "陳均昇組長": "陳O昇組長",
+      "王景相組長": "王O相組長",
+      "陳淑慧組長": "陳O慧組長",
+      "劉育成組長": "劉O成組長",
+      "陳姿秀組長": "陳O秀組長",
+    };
+
+    const PERIODS = ["第一節", "第二節", "第三節", "第四節", "第五節", "第六節", "第七節", "第八節"];
+
+    const CLASSES = [
+      ...Array.from({ length: 6 }, (_, i) => `70${i + 1}`),
+      ...Array.from({ length: 6 }, (_, i) => `80${i + 1}`),
+      ...Array.from({ length: 8 }, (_, i) => `90${i + 1}`),
+      "學輔1 (資源班)", "學輔2 (資源班)", "學輔3 (資源班)", "學輔4-6 (特教班)",
+    ];
+
+    const TEACHERS_BY_SUBJECT = {
+      國語文: ["陳O潔", "林O微", "謝O平", "曾O泰", "陳O芳", "金O萍", "楊O昌", "邱O蘋", "郭O惠", "林O合"],
+      英語文: ["李O葳", "吳O瑩", "林O裕", "陳O子", "劉O成", "廖O鈴", "蘇O玲"],
+      數學: ["徐O真", "潘O廷", "陳O玲", "蔡O陞", "楊O穎", "王O", "李O平"],
+      社會領域: ["陳O昇", "洪O燕", "陳O慧", "吳O珊", "蕭O恩", "林O淑", "林O儀"],
+      自然領域: ["鐘O德", "張O欣", "張O耘", "陳O怡", "張O梅", "郭O緯", "朱O芬"],
+      藝文領域: ["楊O慧", "陳O妤", "張O如", "賴O蓁"],
+      綜合活動: ["洪O榛", "翁O斌", "何O婷", "林O瑤", "賴O宇", "賴O蓁", "張O綺", "鄭O寬", "傅O玲", "吳O宣", "姚O宣"],
+      健體領域: ["塗O琦", "林O姿", "吳O陞", "劉O瑋", "劉O佩"],
+      科技領域: ["孫O耀", "王O相", "張O鈞", "翁O斌"],
+      特需領域: ["陳O茹", "張O宗", "莊O雯", "劉O筑", "王O享", "陳O秀"],
+    };
+
+    const TEACHER_DOMAIN = {};
+    Object.keys(TEACHERS_BY_SUBJECT).forEach(domain => {
+      TEACHERS_BY_SUBJECT[domain].forEach(name => {
+        if (!TEACHER_DOMAIN[name]) TEACHER_DOMAIN[name] = domain;
+      });
+    });
+
+    const CLASS_SCHEDULE = {"701":{"週一":{"1":["國文","陳O潔"],"2":["公民","林O儀"],"3":["本土語","林O合"],"4":["數學","徐O真"],"5":["聽覺藝術","張O如"],"6":["輔導","蕭O恩"],"7":["自然","陳O怡"]},"週二":{"1":["數學","徐O真"],"2":["英語","林O裕"],"3":["體育","塗O琦"],"4":["健康教育","塗O琦"],"5":["國文","陳O潔"],"6":["自然","陳O怡"],"7":["資訊","孫O耀"]},"週三":{"1":["國文","陳O潔"],"2":["地理","吳O珊"],"3":["童軍","鐘O德"],"4":["數學","徐O真"],"5":["英語","林O裕"],"6":["歷史","林O儀"],"7":["生科","翁O斌"]},"週四":{"1":["自然","陳O怡"],"2":["英語","林O裕"],"3":["視覺藝術","楊O慧"],"4":["國文","陳O潔"],"5":["體育","塗O琦"],"6":["班會","鐘O德"],"7":["聯課","邱O蘋"]},"週五":{"1":["國際教育","林O裕"],"2":["國文","陳O潔"],"3":["數學","徐O真"],"4":["閱讀得來速","邱O蘋"],"5":["表演藝術","賴O蓁"],"6":["家政","洪O榛"],"7":["話我家鄉","吳O珊"]}},"702":{"週一":{"1":["數學","徐O真"],"2":["英語","吳O瑩"],"3":["童軍","賴O蓁"],"4":["國文","郭O惠"],"5":["話我家鄉","吳O珊"],"6":["公民","林O儀"],"7":["聽覺藝術","張O如"]},"週二":{"1":["國文","郭O惠"],"2":["地理","吳O珊"],"3":["英語","吳O瑩"],"4":["自然","陳O怡"],"5":["數學","徐O真"],"6":["家政","洪O榛"],"7":["閱讀得來速","邱O蘋"]},"週三":{"1":["數學","徐O真"],"2":["資訊","孫O耀"],"3":["視覺藝術","楊O慧"],"4":["國文","郭O惠"],"5":["體育","塗O琦"],"6":["自然","陳O怡"],"7":["英語","吳O瑩"]},"週四":{"1":["表演藝術","賴O蓁"],"2":["國際教育","吳O瑩"],"3":["生科","翁O斌"],"4":["國文","郭O惠"],"5":["本土語","林O合"],"6":["班會","徐O真"],"7":["聯課","張O如"]},"週五":{"1":["歷史","林O儀"],"2":["數學","徐O真"],"3":["國文","郭O惠"],"4":["輔導","洪O榛"],"5":["體育","塗O琦"],"6":["健康教育","塗O琦"],"7":["自然","陳O怡"]}},"703":{"週一":{"1":["視覺藝術","楊O慧"],"2":["健康教育","塗O琦"],"3":["體育","塗O琦"],"4":["數學","林O儀"],"5":["歷史","林O儀"],"6":["國文","陳O潔"],"7":["英語","吳O瑩"]},"週二":{"1":["閱讀得來速","邱O蘋"],"2":["國文","陳O潔"],"3":["生科","翁O斌"],"4":["英語","吳O瑩"],"5":["數學","林O儀"],"6":["地理","陳O慧"],"7":["家政","洪O榛"]},"週三":{"1":["自然","陳O怡"],"2":["輔導","洪O榛"],"3":["數學","林O儀"],"4":["話我家鄉","陳O慧"],"5":["聽覺藝術","張O如"],"6":["童軍","賴O蓁"],"7":["國文","陳O潔"]},"週四":{"1":["國文","陳O潔"],"2":["表演藝術","賴O蓁"],"3":["英語","吳O瑩"],"4":["自然","陳O怡"],"5":["資訊","孫O耀"],"6":["班會","陳O潔"],"7":["聯課","林O姿"]},"週五":{"1":["體育","塗O琦"],"2":["本土語","林O合"],"3":["國文","陳O潔"],"4":["國際教育","吳O瑩"],"5":["公民","林O儀"],"6":["自然","陳O怡"],"7":["數學","林O儀"]}},"704":{"週一":{"1":["數學","陳O玲"],"2":["英語","蘇O玲"],"3":["歷史","林O儀"],"4":["自然","陳O怡"],"5":["體育","塗O琦"],"6":["聽覺藝術","張O如"],"7":["國文","謝O平"]},"週二":{"1":["自然","陳O怡"],"2":["生科","翁O斌"],"3":["國文","謝O平"],"4":["地理","陳O慧"],"5":["家政","洪O榛"],"6":["童軍","賴O蓁"],"7":["表演藝術","賴O蓁"]},"週三":{"1":["公民","林O儀"],"2":["話我家鄉","陳O慧"],"3":["國文","謝O平"],"4":["資訊","孫O耀"],"5":["自然","陳O怡"],"6":["數學","陳O玲"],"7":["英語","蘇O玲"]},"週四":{"1":["輔導","洪O榛"],"2":["數學","陳O玲"],"3":["國際教育","蘇O玲"],"4":["閱讀得來速","邱O蘋"],"5":["國文","謝O平"],"6":["班會","陳O玲"],"7":["聯課","陳O昇"]},"週五":{"1":["國文","謝O平"],"2":["健康教育","塗O琦"],"3":["體育","塗O琦"],"4":["本土語","林O合"],"5":["視覺藝術","楊O慧"],"6":["數學","陳O玲"],"7":["英語","蘇O玲"]}},"705":{"週一":{"1":["生科","翁O斌"],"2":["聽覺藝術","張O如"],"3":["資訊","孫O耀"],"4":["英語","蘇O玲"],"5":["話我家鄉","陳O慧"],"6":["國文","郭O惠"],"7":["輔導","蕭O恩"]},"週二":{"1":["歷史","林O儀"],"2":["自然","陳O怡"],"3":["數學","徐O真"],"4":["公民","林O儀"],"5":["體育","塗O琦"],"6":["健康教育","塗O琦"],"7":["國文","郭O惠"]},"週三":{"1":["童軍","賴O蓁"],"2":["視覺藝術","楊O慧"],"3":["閱讀得來速","邱O蘋"],"4":["家政","洪O榛"],"5":["英語","蘇O玲"],"6":["國文","郭O惠"],"7":["數學","徐O真"]},"週四":{"1":["本土語","林O合"],"2":["體育","塗O琦"],"3":["國文","郭O惠"],"4":["數學","徐O真"],"5":["自然","陳O怡"],"6":["班會","郭O惠"],"7":["聯課","鄭O寬"]},"週五":{"1":["英語","蘇O玲"],"2":["國文","郭O惠"],"3":["國際教育","蘇O玲"],"4":["地理","陳O慧"],"5":["自然","陳O怡"],"6":["表演藝術","賴O蓁"],"7":["數學","徐O真"]}},"706":{"週一":{"1":["國文","謝O平"],"2":["本土語","林O合"],"3":["自然","陳O怡"],"4":["數學","潘O廷"],"5":["輔導","林O瑤"],"6":["專門訓練","劉O瑋"],"7":["專門訓練","劉O瑋"]},"週二":{"1":["數學","潘O廷"],"2":["資訊","孫O耀"],"3":["歷史","林O儀"],"4":["童軍","林O裕"],"5":["國文","謝O平"],"6":["專門訓練","劉O瑋"],"7":["專門訓練","劉O瑋"]},"週三":{"1":["國文","謝O平"],"2":["英語","林O裕"],"3":["自然","陳O怡"],"4":["數學","潘O廷"],"5":["公民","林O儀"],"6":["專門訓練","劉O瑋"],"7":["體育","吳O陞"]},"週四":{"1":["英語","林O裕"],"2":["聽覺藝術","張O如"],"3":["自然","陳O怡"],"4":["國文","謝O平"],"5":["生科","翁O斌"],"6":["體育","塗O琦"],"7":["視覺藝術","塗O琦"]},"週五":{"1":["地理","陳O慧"],"2":["國文","謝O平"],"3":["數學","潘O廷"],"4":["健康教育","林O姿"],"5":["英語","林O裕"],"6":["彈性課程","劉O瑋"],"7":["彈性課程","劉O瑋"]}},"801":{"週一":{"1":["英語","林O裕"],"2":["體育","林O姿"],"3":["數學","陳O玲"],"4":["國文","洪O燕"],"5":["生科","王O相"],"6":["閱讀得來速","洪O燕"],"7":["童軍","朱O芬"]},"週二":{"1":["國文","洪O燕"],"2":["數學","陳O玲"],"3":["健康教育","林O姿"],"4":["地理","吳O珊"],"5":["歷史","洪O燕"],"6":["自然","朱O芬"],"7":["自然","朱O芬"]},"週三":{"1":["公民","林O淑"],"2":["國文","洪O燕"],"3":["英語","林O裕"],"4":["數學","陳O玲"],"5":["體育","林O姿"],"6":["表演藝術","陳O妤"],"7":["輔導","林O瑤"]},"週四":{"1":["國文","洪O燕"],"2":["家政","洪O榛"],"3":["聽覺藝術","張O如"],"4":["英語","林O裕"],"5":["資訊","王O相"],"6":["班會","洪O燕"],"7":["聯課","吳O宣"]},"週五":{"1":["自然","朱O芬"],"2":["天工開物","朱O芬"],"3":["國文","洪O燕"],"4":["數學","陳O玲"],"5":["本土語","林O合"],"6":["視覺藝術","陳O妤"],"7":["國際教育","林O裕"]}},"802":{"週一":{"1":["體育","劉O瑋"],"2":["童軍","陳O妤"],"3":["國文","曾O泰"],"4":["數學","陳O玲"],"5":["英語","陳O子"],"6":["閱讀得來速","曾O泰"],"7":["家政","洪O榛"]},"週二":{"1":["國文","曾O泰"],"2":["國文","曾O泰"],"3":["自然","郭O緯"],"4":["國際教育","陳O子"],"5":["公民","林O淑"],"6":["聽覺藝術","張O如"],"7":["數學","陳O玲"]},"週三":{"1":["表演藝術","陳O妤"],"2":["數學","陳O玲"],"3":["輔導","賴O宇"],"4":["英語","陳O子"],"5":["自然","郭O緯"],"6":["地理","吳O珊"],"7":["健康教育","林O姿"]},"週四":{"1":["數學","陳O玲"],"2":["本土語","林O合"],"3":["自然","郭O緯"],"4":["視覺藝術","陳O妤"],"5":["英語","陳O子"],"6":["班會","陳O妤"],"7":["聯課","張O宗"]},"週五":{"1":["體育","劉O瑋"],"2":["歷史","洪O燕"],"3":["國文","曾O泰"],"4":["國文","曾O泰"],"5":["天工開物","郭O緯"],"6":["資訊","王O相"],"7":["生科","王O相"]}},"803":{"週一":{"1":["英語","廖O鈴"],"2":["數學","李O平"],"3":["家政","洪O榛"],"4":["天工開物","郭O緯"],"5":["國文","楊O昌"],"6":["資訊","王O相"],"7":["生科","王O相"]},"週二":{"1":["閱讀得來速","楊O昌"],"2":["健康教育","劉O佩"],"3":["童軍","劉O佩"],"4":["數學","李O平"],"5":["聽覺藝術","張O如"],"6":["輔導","賴O宇"],"7":["國文","楊O昌"]},"週三":{"1":["自然","郭O緯"],"2":["英語","廖O鈴"],"3":["國文","楊O昌"],"4":["表演藝術","陳O妤"],"5":["體育","劉O佩"],"6":["公民","林O淑"],"7":["數學","李O平"]},"週四":{"1":["英語","廖O鈴"],"2":["視覺藝術","陳O妤"],"3":["國文","楊O昌"],"4":["自然","郭O緯"],"5":["地理","吳O珊"],"6":["班會","劉O佩"],"7":["聯課","傅O玲"]},"週五":{"1":["數學","李O平"],"2":["國文","楊O昌"],"3":["本土語","林O合"],"4":["國際教育","廖O鈴"],"5":["體育","劉O佩"],"6":["自然","郭O緯"],"7":["歷史","洪O燕"]}},"804":{"週一":{"1":["英語","蘇O玲"],"2":["數學","王O"],"3":["輔導","何O婷"],"4":["體育","劉O瑋"],"5":["國文","林O微"],"6":["自然","郭O緯"],"7":["視覺藝術","陳O妤"]},"週二":{"1":["天工開物","郭O緯"],"2":["歷史","洪O燕"],"3":["公民","林O淑"],"4":["數學","王O"],"5":["資訊","王O相"],"6":["生科","王O相"],"7":["國文","林O微"]},"週三":{"1":["家政","洪O榛"],"2":["表演藝術","陳O妤"],"3":["國文","林O微"],"4":["童軍","賴O蓁"],"5":["閱讀得來速","林O微"],"6":["國際教育","蘇O玲"],"7":["數學","王O"]},"週四":{"1":["健康教育","林O姿"],"2":["英語","蘇O玲"],"3":["國文","林O微"],"4":["本土語","林O合"],"5":["自然","郭O緯"],"6":["班會","林O微"],"7":["聯課","張O綺"]},"週五":{"1":["國文","林O微"],"2":["數學","王O"],"3":["聽覺藝術","張O如"],"4":["體育","劉O瑋"],"5":["地理","吳O珊"],"6":["英語","蘇O玲"],"7":["自然","郭O緯"]}},"805":{"週一":{"1":["國文","曾O泰"],"2":["國文","曾O泰"],"3":["體育","劉O佩"],"4":["數學","王O"],"5":["英語","廖O鈴"],"6":["家政","洪O榛"],"7":["自然","郭O緯"]},"週二":{"1":["數學","王O"],"2":["資訊","王O相"],"3":["生科","王O相"],"4":["自然","郭O緯"],"5":["童軍","楊O慧"],"6":["國文","曾O泰"],"7":["國文","曾O泰"]},"週三":{"1":["英語","廖O鈴"],"2":["數學","王O"],"3":["聽覺藝術","張O如"],"4":["歷史","洪O燕"],"5":["輔導","何O婷"],"6":["天工開物","郭O緯"],"7":["表演藝術","楊O慧"]},"週四":{"1":["自然","郭O緯"],"2":["視覺藝術","楊O慧"],"3":["本土語","林O合"],"4":["健康教育","劉O佩"],"5":["國際教育","廖O鈴"],"6":["班會","楊O慧"],"7":["聯課","姚O宣"]},"週五":{"1":["體育","劉O佩"],"2":["公民","林O淑"],"3":["英語","廖O鈴"],"4":["地理","吳O珊"],"5":["數學","王O"],"6":["國文","曾O泰"],"7":["閱讀得來速","曾O泰"]}},"806":{"週一":{"1":["歷史","洪O燕"],"2":["自然","郭O緯"],"3":["數學","李O平"],"4":["本土語","林O合"],"5":["國文","曾O泰"],"6":["專門訓練","吳O陞"],"7":["專門訓練","吳O陞"]},"週二":{"1":["數學","李O平"],"2":["健康教育","林O姿"],"3":["國文","曾O泰"],"4":["國文","曾O泰"],"5":["自然","郭O緯"],"6":["視覺藝術","林O姿"],"7":["體育","塗O琦"]},"週三":{"1":["輔導","林O瑤"],"2":["數學","李O平"],"3":["自然","郭O緯"],"4":["地理","吳O珊"],"5":["英語","陳O子"],"6":["專門訓練","吳O陞"],"7":["體育","劉O瑋"]},"週四":{"1":["童軍","李O平"],"2":["英語","陳O子"],"3":["資訊","王O相"],"4":["生科","王O相"],"5":["公民","林O淑"],"6":["彈性課程","劉O瑋"],"7":["彈性課程","劉O瑋"]},"週五":{"1":["國文","曾O泰"],"2":["國文","曾O泰"],"3":["數學","李O平"],"4":["英語","陳O子"],"5":["聽覺藝術","張O如"],"6":["專門訓練","吳O陞"],"7":["專門訓練","吳O陞"]}},"901":{"週一":{"1":["國文","陳O芳"],"2":["健康教育","吳O陞"],"3":["數學","潘O廷"],"4":["童軍","賴O蓁"],"5":["資訊","孫O耀"],"6":["表演藝術","張O耘"],"7":["國際教育","李O葳"]},"週二":{"1":["英語","李O葳"],"2":["自然","張O耘"],"3":["數學","潘O廷"],"4":["體育","劉O瑋"],"5":["視覺藝術","陳O妤"],"6":["國文","陳O芳"],"7":["地理","吳O珊"]},"週三":{"1":["世界時空之旅","陳O昇"],"2":["數學","潘O廷"],"3":["生科","翁O斌"],"4":["天工開物","張O耘"],"5":["國文","陳O芳"],"6":["聽覺藝術","張O如"],"7":["輔導","何O婷"]},"週四":{"1":["國文","陳O芳"],"2":["數學","潘O廷"],"3":["自然","張O耘"],"4":["英語","李O葳"],"5":["體育","劉O瑋"],"6":["班會","潘O廷"],"7":["聯課","潘O廷"]},"週五":{"1":["曾幾何時","潘O廷"],"2":["家政","洪O榛"],"3":["國文","陳O芳"],"4":["公民","林O淑"],"5":["自然","張O耘"],"6":["英語","李O葳"],"7":["歷史","陳O昇"]}},"902":{"週一":{"1":["體育","吳O陞"],"2":["國際教育","李O葳"],"3":["自然","鐘O德"],"4":["數學","楊O穎"],"5":["國文","金O萍"],"6":["地理","吳O珊"],"7":["世界時空之旅","陳O昇"]},"週二":{"1":["天工開物","鐘O德"],"2":["數學","楊O穎"],"3":["國文","金O萍"],"4":["英語","李O葳"],"5":["輔導","林O瑤"],"6":["歷史","陳O昇"],"7":["視覺藝術","陳O妤"]},"週三":{"1":["國文","金O萍"],"2":["聽覺藝術","張O如"],"3":["數學","楊O穎"],"4":["英語","李O葳"],"5":["童軍","賴O蓁"],"6":["生科","翁O斌"],"7":["自然","鐘O德"]},"週四":{"1":["自然","鐘O德"],"2":["資訊","孫O耀"],"3":["國文","金O萍"],"4":["曾幾何時","楊O穎"],"5":["健康教育","吳O陞"],"6":["班會","楊O穎"],"7":["聯課","楊O穎"]},"週五":{"1":["家政","洪O榛"],"2":["國文","金O萍"],"3":["表演藝術","賴O蓁"],"4":["體育","吳O陞"],"5":["英語","李O葳"],"6":["公民","林O淑"],"7":["數學","楊O穎"]}},"903":{"週一":{"1":["數學","王O"],"2":["資訊","孫O耀"],"3":["英語","陳O子"],"4":["國文","謝O平"],"5":["公民","林O淑"],"6":["生科","張O鈞"],"7":["表演藝術","張O耘"]},"週二":{"1":["歷史","陳O昇"],"2":["國文","謝O平"],"3":["國際教育","陳O子"],"4":["體育","吳O陞"],"5":["自然","張O耘"],"6":["數學","王O"],"7":["童軍","謝O平"]},"週三":{"1":["自然","張O耘"],"2":["輔導","賴O宇"],"3":["數學","王O"],"4":["世界時空之旅","陳O昇"],"5":["家政","洪O榛"],"6":["國文","謝O平"],"7":["英語","陳O子"]},"週四":{"1":["自然","張O耘"],"2":["國文","謝O平"],"3":["體育","吳O陞"],"4":["數學","王O"],"5":["聽覺藝術","張O如"],"6":["班會","王O"],"7":["聯課","王O"]},"週五":{"1":["曾幾何時","王O"],"2":["地理","吳O珊"],"3":["視覺藝術","楊O慧"],"4":["國文","謝O平"],"5":["健康教育","吳O陞"],"6":["天工開物","張O耘"],"7":["英語","陳O子"]}},"904":{"週一":{"1":["數學","楊O穎"],"2":["自然","張O欣"],"3":["國文","陳O芳"],"4":["體育","吳O陞"],"5":["家政","洪O榛"],"6":["視覺藝術","楊O慧"],"7":["英語","劉O成"]},"週二":{"1":["健康教育","吳O陞"],"2":["英語","劉O成"],"3":["國文","陳O芳"],"4":["自然","張O欣"],"5":["輔導","賴O宇"],"6":["數學","楊O穎"],"7":["聽覺藝術","張O如"]},"週三":{"1":["資訊","孫O耀"],"2":["國文","陳O芳"],"3":["歷史","陳O昇"],"4":["公民","林O淑"],"5":["天工開物","張O欣"],"6":["數學","楊O穎"],"7":["地理","吳O珊"]},"週四":{"1":["數學","楊O穎"],"2":["國文","陳O芳"],"3":["英語","劉O成"],"4":["生科","張O鈞"],"5":["表演藝術","陳O芳"],"6":["班會","陳O芳"],"7":["聯課","陳O芳"]},"週五":{"1":["國文","陳O芳"],"2":["體育","吳O陞"],"3":["曾幾何時","楊O穎"],"4":["世界時空之旅","陳O昇"],"5":["國際教育","劉O成"],"6":["自然","張O欣"],"7":["童軍","賴O蓁"]}},"905":{"週一":{"1":["國文","金O萍"],"2":["數學","楊O穎"],"3":["地理","吳O珊"],"4":["聽覺藝術","張O如"],"5":["體育","劉O瑋"],"6":["自然","朱O芬"],"7":["表演藝術","賴O蓁"]},"週二":{"1":["天工開物","朱O芬"],"2":["世界時空之旅","陳O昇"],"3":["英語","劉O成"],"4":["數學","楊O穎"],"5":["生科","翁O斌"],"6":["國文","金O萍"],"7":["公民","林O淑"]},"週三":{"1":["自然","朱O芬"],"2":["數學","楊O穎"],"3":["輔導","林O瑤"],"4":["國際教育","劉O成"],"5":["國文","金O萍"],"6":["家政","洪O榛"],"7":["健康教育","塗O琦"]},"週四":{"1":["國文","金O萍"],"2":["數學","楊O穎"],"3":["資訊","孫O耀"],"4":["英語","劉O成"],"5":["童軍","賴O蓁"],"6":["班會","金O萍"],"7":["聯課","金O萍"]},"週五":{"1":["曾幾何時","楊O穎"],"2":["體育","劉O瑋"],"3":["歷史","陳O昇"],"4":["國文","金O萍"],"5":["自然","朱O芬"],"6":["視覺藝術","楊O慧"],"7":["英語","劉O成"]}},"906":{"週一":{"1":["數學","潘O廷"],"2":["國文","楊O昌"],"3":["公民","林O淑"],"4":["地理","吳O珊"],"5":["英語","李O葳"],"6":["表演藝術","賴O蓁"],"7":["自然","鐘O德"]},"週二":{"1":["資訊","孫O耀"],"2":["英語","李O葳"],"3":["體育","劉O瑋"],"4":["國文","楊O昌"],"5":["自然","鐘O德"],"6":["數學","潘O廷"],"7":["世界時空之旅","陳O昇"]},"週三":{"1":["輔導","何O婷"],"2":["自然","鐘O德"],"3":["童軍","賴O蓁"],"4":["生科","翁O斌"],"5":["國文","楊O昌"],"6":["國際教育","李O葳"],"7":["數學","潘O廷"]},"週四":{"1":["國文","楊O昌"],"2":["體育","劉O瑋"],"3":["天工開物","鐘O德"],"4":["數學","潘O廷"],"5":["健康教育","林O姿"],"6":["班會","李O葳"],"7":["聯課","李O葳"]},"週五":{"1":["國文","楊O昌"],"2":["聽覺藝術","張O如"],"3":["英語","李O葳"],"4":["曾幾何時","潘O廷"],"5":["視覺藝術","陳O妤"],"6":["歷史","陳O昇"],"7":["家政","洪O榛"]}},"907":{"週一":{"1":["公民","林O淑"],"2":["自然","鐘O德"],"3":["國文","邱O蘋"],"4":["英語","陳O子"],"5":["生科","翁O斌"],"6":["專門訓練","劉O佩"],"7":["專門訓練","劉O佩"]},"週二":{"1":["地理","吳O珊"],"2":["數學","李O平"],"3":["國文","邱O蘋"],"4":["資訊","孫O耀"],"5":["健康教育","林O姿"],"6":["彈性課程","吳O陞"],"7":["彈性課程","吳O陞"]},"週三":{"1":["英語","陳O子"],"2":["國文","邱O蘋"],"3":["數學","李O平"],"4":["輔導","林O瑤"],"5":["自然","鐘O德"],"6":["專門訓練","劉O佩"],"7":["專門訓練","劉O佩"]},"週四":{"1":["英語","陳O子"],"2":["國文","邱O蘋"],"3":["體育","塗O琦"],"4":["自然","鐘O德"],"5":["數學","李O平"],"6":["視覺藝術","吳O陞"],"7":["體育","吳O陞"]},"週五":{"1":["聽覺藝術","張O如"],"2":["童軍","陳O子"],"3":["國文","邱O蘋"],"4":["歷史","林O儀"],"5":["數學","李O平"],"6":["專門訓練","劉O佩"],"7":["彈性課程","劉O佩"]}},"908":{"週一":{"1":["數學","蔡O陞"],"2":["數學","蔡O陞"],"3":["國文","林O微"],"4":["視覺藝術","楊O慧"],"5":["自然","鐘O德"],"6":["英語","陳O子"],"7":["生科","翁O斌"]},"週二":{"1":["英語","陳O子"],"2":["國文","林O微"],"3":["自然","鐘O德"],"4":["自然","鐘O德"],"5":["地理","吳O珊"],"6":["數學","蔡O陞"],"7":["輔導","林O瑤"]},"週五":{"1":["數學","蔡O陞"],"2":["歷史","林O儀"],"3":["國文","林O微"],"4":["國文","林O微"],"5":["體育","蔡O陞"],"6":["英語","陳O子"],"7":["公民","林O淑"]}}};
+
+    const WEEKDAY_MAP = { 1: "週一", 2: "週二", 3: "週三", 4: "週四", 5: "週五" };
+
+    const PERIOD_TIME_RANGES = [
+      { label: "第一節", start: "08:25", end: "09:10" },
+      { label: "第二節", start: "09:20", end: "10:05" },
+      { label: "第三節", start: "10:15", end: "11:00" },
+      { label: "第四節", start: "11:10", end: "11:55" },
+      { label: "第五節", start: "13:15", end: "14:00" },
+      { label: "第六節", start: "14:10", end: "14:55" },
+      { label: "第七節", start: "15:05", end: "15:50" },
+    ];
+
+    function timeStrToMinutes(t) {
+      const [h, m] = t.split(":").map(Number);
+      return h * 60 + m;
+    }
+
+    function getCurrentPeriodLabel() {
+      const now = new Date();
+      const nowMinutes = now.getHours() * 60 + now.getMinutes();
+      for (const p of PERIOD_TIME_RANGES) {
+        const startM = timeStrToMinutes(p.start);
+        const endM = timeStrToMinutes(p.end);
+        if (nowMinutes >= startM && nowMinutes <= endM) return p.label;
+      }
+      for (const p of PERIOD_TIME_RANGES) {
+        const startM = timeStrToMinutes(p.start);
+        if (nowMinutes < startM) return p.label;
+      }
+      return "";
+    }
+
+    function periodLabelToNumber(label) {
+      const idx = PERIODS.indexOf(label);
+      if (idx === -1) return null;
+      return String(idx + 1);
+    }
+
+    function lookupScheduleFor(className, dateValue, periodLabel) {
+      if (!dateValue || !periodLabel) return null;
+      const d = new Date(dateValue + "T00:00:00");
+      if (isNaN(d.getTime())) return null;
+      const weekday = WEEKDAY_MAP[d.getDay()];
+      if (!weekday) return null;
+      const periodNum = periodLabelToNumber(periodLabel);
+      if (!periodNum) return null;
+      const clsData = CLASS_SCHEDULE[className];
+      if (!clsData) return null;
+      const dayData = clsData[weekday];
+      if (!dayData) return null;
+      const cell = dayData[periodNum];
+      if (!cell) return null;
+      const [subjectText, teacherName] = cell;
+      if (!teacherName) return null;
+      const domain = TEACHER_DOMAIN[teacherName] || "";
+      return { subjectText, teacherName, domain };
+    }
+
+    const STATUS_DEFS = [
+      { key: "noClass", label: "教室未排課", color: "gray" },
+      { key: "onTime", label: "教師準時上課", color: "green" },
+      { key: "goodInteraction", label: "師生互動良好", color: "green" },
+      { key: "eMaterial", label: "使用電子媒材", color: "green" },
+      { key: "test", label: "安排課堂考試", color: "green" },
+      { key: "disorder", label: "學生秩序不佳", color: "amber" },
+      { key: "inattentive", label: "多數學生不專心", color: "amber" },
+      { key: "dirty", label: "班級整潔不佳", color: "amber" },
+    ];
+
+    const classRecords = {};
+    let currentGradeFilter = "all";
+    let inactivityTimer = null;
+
+    function createEmptyClassRecord(className) {
+      return {
+        className,
+        subject: "",
+        teacher: "",
+        status: {},
+        remarks: "",
+        manuallyEdited: false,
+      };
+    }
+
+    function resetInactivityTimer() {
+      if (inactivityTimer) clearTimeout(inactivityTimer);
+      inactivityTimer = setTimeout(() => {
+        clearDraftAndForm();
+        alert("您已超過 30 分鐘未進行任何操作，為保護資料安全，系統已自動清除草稿。");
+      }, INACTIVITY_LIMIT_MS);
+    }
+
+    function setupInactivityListeners() {
+      ["mousemove", "keydown", "click", "scroll", "touchstart"].forEach(evt => {
+        window.addEventListener(evt, resetInactivityTimer, { passive: true });
+      });
+      resetInactivityTimer();
+    }
+
+    function getGradeOfClass(cls) {
+      if (cls.startsWith("7")) return "7";
+      if (cls.startsWith("8")) return "8";
+      if (cls.startsWith("9")) return "9";
+      return "special";
+    }
+
+    function applyScheduleAutoFill(onlyClassName) {
+      const dateValue = dateInput.value;
+      const periodLabel = periodSelect.value;
+      CLASSES.forEach(className => {
+        if (onlyClassName && className !== onlyClassName) return;
+        if (!classRecords[className]) classRecords[className] = createEmptyClassRecord(className);
+        const rec = classRecords[className];
+        if (rec.manuallyEdited && !onlyClassName) return;
+        if (rec.status && rec.status.noClass) return;
+
+        const match = lookupScheduleFor(className, dateValue, periodLabel);
+        if (match && TEACHERS_BY_SUBJECT[match.domain]) {
+          rec.subject = match.domain;
+          rec.teacher = match.teacherName;
+        } else {
+          rec.subject = "";
+          rec.teacher = "";
+        }
+        rec.manuallyEdited = false;
+      });
+    }
+
+    // DOM 元素
+    const officerSelect = document.getElementById("officer");
+    const dateInput = document.getElementById("date");
+    const periodSelect = document.getElementById("period");
+    const otherConditionsTextarea = document.getElementById("other-conditions");
+    const lastSavedTextEl = document.getElementById("last-saved-text");
+    const classesListContainer = document.getElementById("classes-list-container");
+    const chipsFilterBar = document.getElementById("chips-filter-bar");
+    const fabSubmitBtn = document.getElementById("fab-submit-btn");
+    const clearBtn = document.getElementById("clear-btn");
+    const progressCountText = document.getElementById("progress-count-text");
+    const progressBarFill = document.getElementById("progress-bar-fill");
+
+    const dialogEl = document.getElementById("confirm-dialog");
+    const uncheckedListEl = document.getElementById("unchecked-class-list");
+    const dialogCancelBtn = document.getElementById("dialog-cancel");
+    const dialogContinueBtn = document.getElementById("dialog-continue");
+
+    function initOfficerOptions() {
+      PATROL_OFFICERS.forEach(name => {
+        const opt = document.createElement("option");
+        opt.value = name;
+        opt.textContent = name;
+        officerSelect.appendChild(opt);
+      });
+    }
+
+    function initPeriodOptions() {
+      PERIODS.forEach(p => {
+        const opt = document.createElement("option");
+        opt.value = p;
+        opt.textContent = p;
+        periodSelect.appendChild(opt);
+      });
+    }
+
+    function updateProgress() {
+      let count = 0;
+      CLASSES.forEach(cls => {
+        const rec = classRecords[cls];
+        if (rec && rec.status && Object.values(rec.status).some(Boolean)) count++;
+      });
+      progressCountText.textContent = `${count} / ${CLASSES.length} 班`;
+      const pct = Math.round((count / CLASSES.length) * 100);
+      progressBarFill.style.width = `${pct}%`;
+    }
+
+    function applyGradeFilter() {
+      const cards = classesListContainer.querySelectorAll(".class-item-card");
+      cards.forEach(card => {
+        const g = card.dataset.grade;
+        card.style.display = (currentGradeFilter === "all" || g === currentGradeFilter) ? "" : "none";
+      });
+    }
+
+    function toggleQuickNormal(className) {
+      if (!classRecords[className]) classRecords[className] = createEmptyClassRecord(className);
+      const rec = classRecords[className];
+      const isAlreadyNormal = !!(rec.status && rec.status.onTime && rec.status.goodInteraction && rec.status.eMaterial && !rec.status.noClass);
+      if (isAlreadyNormal) {
+        rec.status.onTime = false;
+        rec.status.goodInteraction = false;
+        rec.status.eMaterial = false;
+      } else {
+        if (!rec.status) rec.status = {};
+        rec.status.noClass = false;
+        rec.status.onTime = true;
+        rec.status.goodInteraction = true;
+        rec.status.eMaterial = true;
+      }
+      renderClassCards();
+      saveDraft();
+    }
+
+    function renderClassCards() {
+      classesListContainer.innerHTML = "";
+
+      CLASSES.forEach(cls => {
+        if (!classRecords[cls]) classRecords[cls] = createEmptyClassRecord(cls);
+      });
+
+      const usedTeachers = new Set();
+      CLASSES.forEach(cls => {
+        const rec = classRecords[cls];
+        if (rec && rec.teacher) usedTeachers.add(rec.teacher);
+      });
+
+      CLASSES.forEach(className => {
+        const rec = classRecords[className];
+        const isNoClass = !!(rec.status && rec.status.noClass);
+        const isChecked = !!(rec.status && Object.values(rec.status).some(Boolean));
+        const isNormalActive = !!(rec.status && rec.status.onTime && rec.status.goodInteraction && rec.status.eMaterial && !rec.status.noClass);
+        const grade = getGradeOfClass(className);
+
+        const card = document.createElement("div");
+        card.className = `class-item-card grade-${grade} ${isChecked ? "is-patrolled" : ""} ${isNoClass ? "is-empty-class" : ""}`;
+        card.dataset.className = className;
+        card.dataset.grade = grade;
+
+        // 卡片頂部
+        const headerRow = document.createElement("div");
+        headerRow.className = "card-header-row";
+
+        const badge = document.createElement("span");
+        badge.className = `class-badge badge-grade-${grade}`;
+        badge.textContent = className;
+        headerRow.appendChild(badge);
+
+        const actionsDiv = document.createElement("div");
+        actionsDiv.className = "header-quick-actions";
+
+        const quickBtn = document.createElement("button");
+        quickBtn.type = "button";
+        quickBtn.className = `btn-quick-normal ${isNormalActive ? "active" : ""}`;
+        quickBtn.dataset.className = className;
+        quickBtn.innerHTML = `<span>⚡</span> 正常`;
+        quickBtn.title = "一鍵勾選準時上課、師生互動良好與使用電子媒材";
+        actionsDiv.appendChild(quickBtn);
+
+        const noClassChip = document.createElement("label");
+        noClassChip.className = `action-chip chip-gray ${isNoClass ? "checked" : ""}`;
+        const noClassChk = document.createElement("input");
+        noClassChk.type = "checkbox";
+        noClassChk.dataset.className = className;
+        noClassChk.dataset.statusKey = "noClass";
+        noClassChk.checked = isNoClass;
+        noClassChip.appendChild(noClassChk);
+        noClassChip.appendChild(document.createTextNode("教室未排課"));
+        actionsDiv.appendChild(noClassChip);
+
+        headerRow.appendChild(actionsDiv);
+        card.appendChild(headerRow);
+
+        // 領域與教師下拉
+        const inputsGrid = document.createElement("div");
+        inputsGrid.className = "class-info-inputs";
+
+        // 領域
+        const subSelect = document.createElement("select");
+        subSelect.className = "compact-select";
+        subSelect.dataset.className = className;
+        subSelect.dataset.field = "subject";
+        let subOpt = document.createElement("option");
+        subOpt.value = "";
+        subOpt.textContent = "選擇教學領域";
+        subSelect.appendChild(subOpt);
+        Object.keys(TEACHERS_BY_SUBJECT).forEach(sub => {
+          const opt = document.createElement("option");
+          opt.value = sub;
+          opt.textContent = sub;
+          if (rec.subject === sub) opt.selected = true;
+          subSelect.appendChild(opt);
+        });
+        if (isNoClass) {
+          subSelect.value = "";
+          subSelect.disabled = true;
+        }
+        inputsGrid.appendChild(subSelect);
+
+        // 教師
+        const teaSelect = document.createElement("select");
+        teaSelect.className = "compact-select";
+        teaSelect.dataset.className = className;
+        teaSelect.dataset.field = "teacher";
+        const teaOpt = document.createElement("option");
+        teaOpt.value = "";
+        teaOpt.textContent = rec.subject ? "選擇任課教師" : "先選領域";
+        teaSelect.appendChild(teaOpt);
+
+        if (rec.subject && TEACHERS_BY_SUBJECT[rec.subject]) {
+          TEACHERS_BY_SUBJECT[rec.subject].forEach(t => {
+            if (usedTeachers.has(t) && rec.teacher !== t) return;
+            const opt = document.createElement("option");
+            opt.value = t;
+            opt.textContent = t;
+            if (rec.teacher === t) opt.selected = true;
+            teaSelect.appendChild(opt);
+          });
+        }
+        if (isNoClass) {
+          teaSelect.value = "";
+          teaSelect.disabled = true;
+        } else if (!rec.subject) {
+          teaSelect.disabled = true;
+        }
+        inputsGrid.appendChild(teaSelect);
+        card.appendChild(inputsGrid);
+
+        // 巡堂狀況標籤組
+        const chipsWrap = document.createElement("div");
+        chipsWrap.className = "status-chips-wrap";
+
+        // 正向 (綠色)
+        const greenGroup = document.createElement("div");
+        greenGroup.className = "chips-group";
+        STATUS_DEFS.filter(s => s.color === "green").forEach(st => {
+          const isCh = !!rec.status[st.key];
+          const chip = document.createElement("label");
+          chip.className = `action-chip chip-green ${isCh ? "checked" : ""} ${isNoClass ? "disabled" : ""}`;
+          const chk = document.createElement("input");
+          chk.type = "checkbox";
+          chk.dataset.className = className;
+          chk.dataset.statusKey = st.key;
+          chk.checked = isCh;
+          chk.disabled = isNoClass;
+          chip.appendChild(chk);
+          chip.appendChild(document.createTextNode(st.label));
+          greenGroup.appendChild(chip);
+        });
+        chipsWrap.appendChild(greenGroup);
+
+        // 提醒 (黃色)
+        const amberGroup = document.createElement("div");
+        amberGroup.className = "chips-group";
+        STATUS_DEFS.filter(s => s.color === "amber").forEach(st => {
+          const isCh = !!rec.status[st.key];
+          const chip = document.createElement("label");
+          chip.className = `action-chip chip-amber ${isCh ? "checked" : ""} ${isNoClass ? "disabled" : ""}`;
+          const chk = document.createElement("input");
+          chk.type = "checkbox";
+          chk.dataset.className = className;
+          chk.dataset.statusKey = st.key;
+          chk.checked = isCh;
+          chk.disabled = isNoClass;
+          chip.appendChild(chk);
+          chip.appendChild(document.createTextNode(st.label));
+          amberGroup.appendChild(chip);
+        });
+        chipsWrap.appendChild(amberGroup);
+        card.appendChild(chipsWrap);
+
+        // 備註欄
+        const remInput = document.createElement("input");
+        remInput.type = "text";
+        remInput.className = "remarks-input";
+        remInput.placeholder = "備註（例：專科教室、戶外課）";
+        remInput.value = rec.remarks || "";
+        remInput.dataset.className = className;
+        remInput.dataset.field = "remarks";
+        card.appendChild(remInput);
+
+        classesListContainer.appendChild(card);
+      });
+
+      applyGradeFilter();
+      updateProgress();
+    }
+
+    function updateLastSavedText(iso) {
+      if (!iso) {
+        lastSavedTextEl.textContent = "";
+        return;
+      }
+      const dt = new Date(iso);
+      if (!isNaN(dt.getTime())) {
+        lastSavedTextEl.textContent = "自動儲存：" + dt.toLocaleTimeString("zh-TW") + "（此裝置）";
+      }
+    }
+
+    function saveDraft() {
+      try {
+        const nowIso = new Date().toISOString();
+        const draft = {
+          officer: officerSelect.value,
+          date: dateInput.value,
+          period: periodSelect.value,
+          otherConditions: otherConditionsTextarea.value,
+          classRecords,
+          lastSaved: nowIso,
+        };
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(draft));
+        updateLastSavedText(nowIso);
+      } catch (err) {
+        console.error("儲存草稿失敗", err);
+      }
+    }
+
+    function getLocalDateStr() {
+      const d = new Date();
+      const y = d.getFullYear();
+      const m = String(d.getMonth() + 1).padStart(2, "0");
+      const day = String(d.getDate()).padStart(2, "0");
+      return `${y}-${m}-${day}`;
+    }
+
+    function restoreDraft() {
+      dateInput.value = getLocalDateStr();
+      periodSelect.value = getCurrentPeriodLabel();
+
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) {
+        applyScheduleAutoFill();
+        renderClassCards();
+        saveDraft();
+        return;
+      }
+      try {
+        const draft = JSON.parse(raw);
+        if (draft.officer) {
+          officerSelect.value = OFFICER_ALIAS_MAP[draft.officer] || draft.officer;
+        }
+        if (draft.otherConditions) otherConditionsTextarea.value = draft.otherConditions;
+
+        if (draft.classRecords) {
+          CLASSES.forEach(cls => {
+            const rec = draft.classRecords[cls];
+            if (rec) {
+              classRecords[cls] = {
+                className: cls,
+                subject: rec.subject || "",
+                teacher: rec.teacher || "",
+                status: rec.status || {},
+                remarks: rec.remarks || "",
+                manuallyEdited: !!rec.manuallyEdited,
+              };
+            } else {
+              classRecords[cls] = createEmptyClassRecord(cls);
+            }
+          });
+        } else {
+          CLASSES.forEach(cls => {
+            classRecords[cls] = createEmptyClassRecord(cls);
+          });
+        }
+
+        applyScheduleAutoFill();
+        renderClassCards();
+        saveDraft();
+
+        if (draft.lastSaved) {
+          updateLastSavedText(draft.lastSaved);
+        }
+      } catch (err) {
+        console.error("恢復草稿失敗", err);
+      }
+    }
+
+    function clearDraftAndForm() {
+      dateInput.value = getLocalDateStr();
+      officerSelect.value = "";
+      periodSelect.value = getCurrentPeriodLabel();
+      otherConditionsTextarea.value = "";
+      CLASSES.forEach(cls => {
+        classRecords[cls] = createEmptyClassRecord(cls);
+      });
+      applyScheduleAutoFill();
+      renderClassCards();
+      updateLastSavedText("");
+      localStorage.removeItem(STORAGE_KEY);
+    }
+
+    function hasAnyCheckedClass() {
+      return Object.values(classRecords).some(rec => {
+        if (!rec || !rec.status) return false;
+        return Object.values(rec.status).some(Boolean);
+      });
+    }
+
+    function validateForm() {
+      if (!officerSelect.value || !dateInput.value || !periodSelect.value) {
+        alert("請務必填寫「巡堂人員」、「巡堂日期」和「節次」");
+        return false;
+      }
+      if (!hasAnyCheckedClass() && !otherConditionsTextarea.value.trim()) {
+        alert("請至少勾選一個班級狀況，或填寫其他特殊狀況說明");
+        return false;
+      }
+      return true;
+    }
+
+    function getUncheckedClasses() {
+      const checked = new Set();
+      Object.values(classRecords).forEach(rec => {
+        if (rec && rec.status && Object.values(rec.status).some(Boolean)) {
+          checked.add(rec.className);
+        }
+      });
+      return CLASSES.filter(cls => !checked.has(cls));
+    }
+
+    function buildPayload() {
+      const records = [];
+      Object.values(classRecords).forEach(rec => {
+        if (!rec || !rec.status) return;
+        const hasStatus = Object.values(rec.status).some(Boolean);
+        if (!hasStatus) return;
+
+        records.push({
+          officer: officerSelect.value,
+          date: dateInput.value,
+          period: periodSelect.value,
+          className: rec.className,
+          subject: rec.subject,
+          subjectTeacher: rec.teacher,
+          status: rec.status,
+          remarks: rec.remarks || "",
+          otherConditions: otherConditionsTextarea.value || "",
+        });
+      });
+
+      const fallback = {
+        officer: officerSelect.value,
+        date: dateInput.value,
+        period: periodSelect.value,
+        otherConditions: otherConditionsTextarea.value || "",
+      };
+
+      return { records, fallback };
+    }
+
+    function doSubmit() {
+      const payload = buildPayload();
+      const formData = new URLSearchParams();
+      formData.append("payload", JSON.stringify(payload));
+
+      fabSubmitBtn.disabled = true;
+      fabSubmitBtn.innerHTML = `<span>⏳</span><span>上傳中...</span>`;
+
+      fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData,
+      })
+        .then(() => {
+          alert("巡堂紀錄已成功提交至 Google 試算表！");
+          clearDraftAndForm();
+        })
+        .catch(err => {
+          console.error("提交失敗", err);
+          alert("提交失敗！請確認網路連線與權限設定。");
+        })
+        .finally(() => {
+          fabSubmitBtn.disabled = false;
+          fabSubmitBtn.innerHTML = `<span>🚀</span><span>提交紀錄</span>`;
+        });
+    }
+
+    function bindEvents() {
+      officerSelect.addEventListener("change", saveDraft);
+
+      dateInput.addEventListener("change", function () {
+        applyScheduleAutoFill();
+        renderClassCards();
+        saveDraft();
+      });
+
+      periodSelect.addEventListener("change", function () {
+        applyScheduleAutoFill();
+        renderClassCards();
+        saveDraft();
+      });
+
+      otherConditionsTextarea.addEventListener("input", saveDraft);
+
+      // 班級卡片容器事件監聽
+      classesListContainer.addEventListener("change", function (e) {
+        const target = e.target;
+        if (!(target instanceof HTMLElement)) return;
+
+        const className = target.dataset.className;
+        if (!className) return;
+        if (!classRecords[className]) classRecords[className] = createEmptyClassRecord(className);
+        const rec = classRecords[className];
+
+        const field = target.dataset.field;
+        if (field === "subject") {
+          rec.subject = target.value || "";
+          rec.teacher = "";
+          rec.manuallyEdited = true;
+          renderClassCards();
+          saveDraft();
+          return;
+        } else if (field === "teacher") {
+          rec.teacher = target.value || "";
+          rec.manuallyEdited = true;
+          renderClassCards();
+          saveDraft();
+          return;
+        } else if (field === "remarks") {
+          rec.remarks = target.value || "";
+          saveDraft();
+          return;
+        }
+
+        const statusKey = target.dataset.statusKey;
+        if (statusKey) {
+          const prevStatus = rec.status || {};
+          const newValue = target.checked;
+          let nextStatus = {};
+
+          if (statusKey === "noClass" && newValue) {
+            nextStatus = { noClass: true };
+            rec.subject = "";
+            rec.teacher = "";
+          } else if (statusKey !== "noClass" && newValue) {
+            nextStatus = Object.assign({}, prevStatus, { noClass: false });
+            nextStatus[statusKey] = true;
+          } else {
+            nextStatus = Object.assign({}, prevStatus);
+            nextStatus[statusKey] = false;
+          }
+
+          rec.status = nextStatus;
+          renderClassCards();
+          saveDraft();
+        }
+      });
+
+      // 點擊一鍵正常
+      classesListContainer.addEventListener("click", function (e) {
+        const btn = e.target.closest(".btn-quick-normal");
+        if (btn && btn.dataset.className) {
+          e.preventDefault();
+          toggleQuickNormal(btn.dataset.className);
+        }
+      });
+
+      // 年級 Chips 切換
+      chipsFilterBar.addEventListener("click", function (e) {
+        const chip = e.target.closest(".filter-chip");
+        if (!chip) return;
+        currentGradeFilter = chip.dataset.grade || "all";
+        chipsFilterBar.querySelectorAll(".filter-chip").forEach(c => c.classList.remove("active"));
+        chip.classList.add("active");
+        applyGradeFilter();
+      });
+
+      // FAB 提交
+      fabSubmitBtn.addEventListener("click", function () {
+        if (!validateForm()) return;
+        const unchecked = getUncheckedClasses();
+        const hasChecked = hasAnyCheckedClass();
+
+        if (unchecked.length > 0 && hasChecked) {
+          uncheckedListEl.innerHTML = "";
+          unchecked.forEach(cls => {
+            const li = document.createElement("li");
+            li.textContent = cls;
+            uncheckedListEl.appendChild(li);
+          });
+          dialogEl.classList.add("show");
+        } else {
+          doSubmit();
+        }
+      });
+
+      dialogCancelBtn.addEventListener("click", () => dialogEl.classList.remove("show"));
+      dialogContinueBtn.addEventListener("click", () => {
+        dialogEl.classList.remove("show");
+        doSubmit();
+      });
+
+      clearBtn.addEventListener("click", function () {
+        if (confirm("確定要清除所有未提交的巡堂紀錄嗎？")) {
+          clearDraftAndForm();
+          alert("已清除草稿。");
+        }
+      });
+    }
+
+
+    /* 色彩主題切換器邏輯 */
+    const THEME_STORAGE_KEY = "patrol_theme_v1";
+    const themeMenuBtn = document.getElementById("theme-menu-btn");
+    const themeDropdownMenu = document.getElementById("theme-dropdown-menu");
+    const currentThemeDot = document.getElementById("current-theme-dot");
+    const themeItems = document.querySelectorAll(".theme-item");
+
+    function applyTheme(themeName) {
+      document.documentElement.setAttribute("data-theme", themeName);
+      try {
+        localStorage.setItem(THEME_STORAGE_KEY, themeName);
+      } catch (e) {}
+
+      themeItems.forEach(item => {
+        const isActive = item.dataset.theme === themeName;
+        item.classList.toggle("active", isActive);
+      });
+
+      const activeItem = document.querySelector(`.theme-item[data-theme="${themeName}"]`);
+      if (activeItem && currentThemeDot) {
+        const swatch = activeItem.querySelector(".theme-swatch");
+        if (swatch) currentThemeDot.style.backgroundColor = swatch.style.backgroundColor;
+      }
+
+      const metaTheme = document.querySelector('meta[name="theme-color"]');
+      if (metaTheme && activeItem) {
+        const swatch = activeItem.querySelector(".theme-swatch");
+        if (swatch) metaTheme.setAttribute("content", swatch.style.backgroundColor);
+      }
+    }
+
+    function initTheme() {
+      let savedTheme = "blue";
+      try {
+        savedTheme = localStorage.getItem(THEME_STORAGE_KEY) || "blue";
+      } catch (e) {}
+      applyTheme(savedTheme);
+
+      if (themeMenuBtn && themeDropdownMenu) {
+        themeMenuBtn.addEventListener("click", function (e) {
+          e.stopPropagation();
+          themeDropdownMenu.classList.toggle("show");
+        });
+
+        document.addEventListener("click", function (e) {
+          if (!themeMenuBtn.contains(e.target) && !themeDropdownMenu.contains(e.target)) {
+            themeDropdownMenu.classList.remove("show");
+          }
+        });
+
+        themeItems.forEach(item => {
+          item.addEventListener("click", function () {
+            const t = this.dataset.theme;
+            if (t) {
+              applyTheme(t);
+              themeDropdownMenu.classList.remove("show");
+            }
+          });
+        });
+      }
+    }
+
+    (function init() {
+      initTheme();
+      initOfficerOptions();
+      initPeriodOptions();
+      CLASSES.forEach(cls => {
+        classRecords[cls] = createEmptyClassRecord(cls);
+      });
+      renderClassCards();
+      restoreDraft();
+      bindEvents();
+      setupInactivityListeners();
+    })();
+  </script>
+</body>
+</html>
